@@ -1,0 +1,58 @@
+<body>
+  <section class="vh-100">
+      <div class="container py-5">
+        <div class="row d-flex align-items-center justify-content-center">
+        
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form (ngSubmit)="postData()">
+              <h1>Ajouter un Evenement</h1><br>
+              
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="nom" [(ngModel)]='nom' name='nom'  class="form-control form-control-lg" />
+                <label class="form-label" for="nom">Nom</label>
+              </div>
+
+              
+
+              <div class="form-outline mb-4">
+                <input type="text" id="ville" [(ngModel)]="ville" name="ville"  class="form-control form-control-lg" />
+                <label class="form-label" for="ville">Ville</label>
+              </div>
+              <!-- Name input -->
+              
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="Date" id="dateD" [(ngModel)]="date" name="date" class="form-control form-control-lg" />
+                <label class="form-label" for="dateD">Date de début</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="Date" id="dateFin" [(ngModel)]="dateFin" name="dateFin" class="form-control form-control-lg" />
+                <label class="form-label" for="dateFIN">Date fin</label>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input type="file" id="affiche" [(ngModel)]="affiche" name="affiche" class="form-control form-control-lg" />
+                <label class="form-label" for="affiche">Affiche</label>
+              </div>
+
+              
+
+            
+              
+    
+              
+    
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">ajouter</button>
+    
+    
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+    

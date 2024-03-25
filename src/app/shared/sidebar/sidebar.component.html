@@ -1,0 +1,42 @@
+<!-- sidebar.component.html -->
+<nav class="sidebar-nav">
+    <ul id="sidebarnav" class="p-3">
+      <li *ngFor="let item of sidebarnavItems" [routerLink]="item.path" [routerLinkActive]="'active'">
+        <a class="sidebar-link waves-effect waves-dark">
+          <i class="{{ item.icon }}"></i>
+          <span class="hide-menu">{{ item.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <style>
+
+
+  .sidebar-nav {
+    padding-top: 20px; /* Adjust as needed */
+  }
+  
+  #sidebarnav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #sidebarnav li {
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+  
+  .sidebar-link {
+    display: block;
+    padding: 10px;
+    color: #333; /* Adjust text color */
+    text-decoration: none;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #f0f0f0; /* Adjust hover background color */
+  }
+  
+  .sidebar-link i {
+    margin-right: 10px; /* Adjust spacing between icon and text */
+  }
+  </style>
