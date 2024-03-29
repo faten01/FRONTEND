@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information</title>
+    <a routerLink="/component/buttons" class="btn btn-success" >add user</a>
+    
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  
+  <h2 style="display: flex; justify-content: space-between;">User Information
+    <a routerLink="/component/buttons" class="btn btn-primary">Add User</a>
+  </h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Ville</th>
+        <th>Entreprise</th>
+        <th>Role</th>
+        <th>Action</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of this.users ">
+        <td>{{item.id}}</td>
+        <td>{{item.nom}}</td>
+        <td>{{item.prenom}}</td>
+        <td>{{item.ville}}</td>
+        <td>{{item.entreprise}}</td>
+        <td>{{item.role}}</td>
+       <td>
+
+        <a routerLink="/component/users/:id" class="btn btn-outline-success btn-rounded" data-mdb-ripple-init  data-mdb-ripple-color="dark">Edit</a>
+       <div style="display: flex; justify-content: space-between;"></div>
+
+        <button type="button" class="btn btn-outline-danger btn-rounded">Delete</button> 
+
+
+       </td>
+        
+       
+
+
+
+
+      
+      
+      
+      </tr>     
+   
+    </tbody>
+  </table>
+</body>
+</html>

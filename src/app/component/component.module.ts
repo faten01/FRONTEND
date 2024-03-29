@@ -8,7 +8,7 @@ import { ComponentsRoutes } from './component.routing';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
 import { NgbdAlertBasicComponent } from './stand/alert.component';
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
-import { NgbdnavBasicComponent } from './nav/nav.component';
+import { NgbdnavBasicComponent } from './userList/nav.component';
 import { NgbdButtonsComponent } from './user/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";

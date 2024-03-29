@@ -16,16 +16,23 @@ import { FullComponent } from './layouts/full/full.component';
 
 import { NavigationComponent } from './shared/header/navigation.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-
 import { Approutes } from './app-routing.module';
+
+//import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
+import { LoaderComponent } from './component/loader/loader.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
+    LoaderComponent,
+    HomeComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,

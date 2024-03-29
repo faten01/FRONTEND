@@ -4,6 +4,7 @@
         <div class="row d-flex align-items-center justify-content-center">
         
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <div *ngIf="isLoading"></div>
             <form (ngSubmit)="postData()">
               <h1>Ajouter un utilisateur</h1><br>
               
@@ -35,27 +36,38 @@
                 <label class="form-label" for="photo"  >photo</label>
               </div>
 
-              <label class="form-label" for="role"  >Role:</label><br><br>
+
+              <div class="form-outline mb-4">
+                <input type="text" id="role" [(ngModel)]="role" name="role" class="form-control form-control-lg" />
+                <label class="form-label" for="role"  >Role</label>
+              </div>
+
+              <!--<label class="form-label" for="role" [(ngModel)]="role" >Role:</label><br><br>
 
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <!-- Radio buttons -->
+               
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="isAdmin" type="checkbox" name="admin" id="admin" value="option1"/>
+                  <input class="form-check-input"  type="checkbox" name="admin" id="admin" value="option1"/>
                   <label class="form-check-label" for="rememberOption1"> Administrateur </label>
                   
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" [(ngModel)]="role" type="checkbox" name="exposant" id="exposant" value="option2" />
+                  <input class="form-check-input" type="checkbox" name="exposant" id="exposant" value="option2" />
                   <label class="form-check-label" for="rememberOption2"> Exposant</label>
                 </div>
                
                 
+              </div>-->
+              <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                {{ successMessage }}
               </div>
-              
+              <!-- Error message -->
+              <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+              </div>
     
               
     
-              <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">ajouter</button>
     
     

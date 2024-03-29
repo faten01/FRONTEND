@@ -17,6 +17,8 @@ export class AboutComponent {
   ville!:string
   date!:string
   dateFin!:string
+  successMessage !: string 
+  errorMessage !: string 
  
 
   onSubmit() {
@@ -32,12 +34,16 @@ export class AboutComponent {
       ville:this.ville,
       date:this.date,
      dateFin:this.dateFin,
+     successMessage: this.successMessage,
+     errorMessage: this.errorMessage
     
     } 
 
     this.aboutService.saveEvent(formData).subscribe(
       (response) => {
         console.log('Response received:', response);
+        this.successMessage = 'Form submitted successfully.';
+
         // Handle the response from the server
       },
       (error) => {
@@ -45,6 +51,8 @@ export class AboutComponent {
         
         
         console.error('Error occurred:', error.error);
+        this.errorMessage = 'Form submission failed.';
+
       }
     );
 }

@@ -3,8 +3,8 @@ import { NgbdpaginationBasicComponent } from './pagination/pagination.component'
 import { NgbdAlertBasicComponent } from './stand/alert.component';
 
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
-import { NgbdnavBasicComponent } from './nav/nav.component';
-import { BadgeComponent } from './badge/badge.component';
+import { NgbdnavBasicComponent } from './userList/nav.component';
+import { BadgeComponent } from './userEdit/badge.component';
 import { NgbdButtonsComponent } from './user/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
@@ -27,7 +27,7 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdpaginationBasicComponent
 			},
 			{
-				path: 'badges',
+				path: 'users/:id',
 				component: BadgeComponent
 			},
 			{

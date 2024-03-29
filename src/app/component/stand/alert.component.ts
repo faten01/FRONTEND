@@ -30,6 +30,8 @@ export class NgbdAlertBasicComponent  {
   largeur!:Number
   etat!:string
   prix !:Number
+  successMessage !: string 
+  errorMessage !: string 
 
   
 
@@ -113,6 +115,9 @@ export class NgbdAlertBasicComponent  {
       largeur:this.largeur,
       etat:this.etat,
       prix :this.prix,
+      successMessage: this.successMessage,
+      errorMessage: this.errorMessage
+  
     } 
 
    
@@ -123,6 +128,8 @@ export class NgbdAlertBasicComponent  {
     this.alertService.savestand(formData).subscribe(
       (response) => {
         console.log('Response received:', response);
+        this.successMessage = 'Form submitted successfully.';
+
         // Handle the response from the server
       },
       (error) => {
@@ -130,6 +137,8 @@ export class NgbdAlertBasicComponent  {
         
         
         console.error('Error occurred:', error.error);
+        this.errorMessage = 'Form submission failed.';
+
       }
     );
   }

@@ -1,0 +1,71 @@
+<body>
+  <section class="vh-100">
+      <div class="container py-5">
+        <div class="row d-flex align-items-center justify-content-center">
+        
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form (ngSubmit)="updateUser()" >
+              <h1>Edit un utilisateur</h1><br>
+                <div *ngIf="this.user">
+              
+              <!-- Email input -->
+              
+                <div class="form-outline mb-4">
+                  <input type="text" id="prenom" [(ngModel)]="user.prenom" name="prenom" class="form-control form-control-lg" />
+                  <label class="form-label" for="prenom"  >Prénom</label>
+                </div>
+            
+                <div class="form-outline mb-4">
+                  <input type="text" id="nom" name="nom" [(ngModel)]="user.nom"  class="form-control form-control-lg" />
+                  <label class="form-label" for="nom" >Nom</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="ville" name="ville"  [(ngModel)]="user.ville" class="form-control form-control-lg" />
+                  <label class="form-label" for="ville" >ville</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="entreprise" name="entreprise" [(ngModel)]="user.entreprise" class="form-control form-control-lg" />
+                  <label class="form-label" for="entreprise"  >Entreprise</label>
+                </div>
+
+            
+
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="role" [(ngModel)]="user.role" name="role" class="form-control form-control-lg" />
+                  <label class="form-label" for="role"  >Role</label>
+                </div>
+
+              <!--<label class="form-label" for="role" [(ngModel)]="role" >Role:</label><br><br>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+               
+                <div class="form-check">
+                  <input class="form-check-input"  type="checkbox" name="admin" id="admin" value="option1"/>
+                  <label class="form-check-label" for="rememberOption1"> Administrateur </label>
+                  
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="exposant" id="exposant" value="option2" />
+                  <label class="form-check-label" for="rememberOption2"> Exposant</label>
+                </div>
+               
+                
+              </div>-->
+                 
+            </div>
+              
+    
+              <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">ajouter</button>
+    
+    
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+    

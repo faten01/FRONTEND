@@ -37,12 +37,14 @@
                 <label class="form-label" for="affiche">Affiche</label>
               </div>
 
-              
+              <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                {{ successMessage }}
+              </div>
+              <!-- Error message -->
+              <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+              </div>
 
-            
-              
-    
-              
     
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">ajouter</button>
