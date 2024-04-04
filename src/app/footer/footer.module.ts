@@ -1,31 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login.component';
+import { FooterComponent } from './footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { NavbarModule } from '../navbar/navbar.module';
+
 
 const routes: Routes = [
   {
     path: "",
     data: {
-      title: "Login",
-      urls: [{ title: "login", url: "/login" }, { title: "Login" }],
+      title: "Footer",
+      urls: [{ title: "footer", url: "/footer" }, { title: "Footer" }],
     },
-    component: LoginComponent,
+    component: FooterComponent,
   },
 ];
 
+
+
 @NgModule({
-  declarations: [ 
-   ],
+  declarations: [],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     RouterModule.forChild(routes)
-   
   ]
 })
-export class LoginModule { }
+export class FooterModule { }

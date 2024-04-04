@@ -7,6 +7,8 @@ import { AboutComponent } from './component/Event/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -73,24 +75,44 @@ export const Approutes: Routes = [
   },
   {
     path: 'register',
+    component: LayoutComponent,
     loadChildren: () => import('./register/register.module').then(m => m.RegisterModule)
   },
   {
     path: 'login',
+    component: LayoutComponent,
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },{
     path: 'component',
     component: FullComponent,
     loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
   },
+
+  {
+    path: 'navbar',
+    loadChildren: () => import('./navbar/navbar.module').then(m => m.NavbarModule)
+  },
+  {
+    path: 'footer',
+    loadChildren: () => import('./footer/footer.module').then(m => m.FooterModule)
+  },
+
+  {
+    path: 'userspace',
+   
+    loadChildren: () => import('./userspace/userspace.module').then(m => m.UserspaceModule)
+  },
   {
     path: 'home',
-    component: HomeComponent,
+    
     children: [
       {
         path: '',
+        component: LayoutComponent,
+
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
+
      
     ]
   },
