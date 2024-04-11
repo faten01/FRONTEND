@@ -1,4 +1,5 @@
 <body>
+
 <section class="vh-100">
     <div class="container py-5">
       <div class="row d-flex align-items-center justify-content-center">
@@ -7,31 +8,31 @@
             class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form>
+          <form (ngSubmit)="PostData()">
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example13">Addresse Email</label>
+              <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control form-control-lg" />
+              <label class="form-label" for="email">Addresse Email</label>
             </div>
             <!-- Name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="form1Example14" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example14">Nom</label>
+              <input type="text" id="nom" [(ngModel)]="nom" name="nom" class="form-control form-control-lg" />
+              <label class="form-label" for="nom">Nom</label>
             </div>
             <!-- Last name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="form1Example15" class="form-control form-control-lg" />
+              <input type="text" id="prenom" [(ngModel)]="prenom" name="prenom" class="form-control form-control-lg" />
               <label class="form-label" for="form1Example15">Prenom</label>
             </div>
             <!-- Phone input -->
             <div class="form-outline mb-4">
-              <input type="text" id="form1Example16" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example16">Telephone</label>
+              <input type="text" id="telephone" [(ngModel)]="telephone" name="telephone" class="form-control form-control-lg" />
+              <label class="form-label" for="telephone">Telephone</label>
             </div>
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example23">Mot De Passe</label>
+              <input type="password" id="MotDePasse" [(ngModel)]="MotDepasse" name="MotDePasse" class="form-control form-control-lg" />
+              <label class="form-label" for="MotDepasse">Mot De Passe</label>
             </div>
   
             <div class="d-flex justify-content-between align-items-center mb-4">

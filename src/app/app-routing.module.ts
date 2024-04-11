@@ -62,7 +62,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 export const Approutes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+ // { path: '', redirectTo: '', pathMatch: 'full' },
   {
     path: 'dashboard',
     component: FullComponent,
@@ -103,6 +103,17 @@ export const Approutes: Routes = [
     loadChildren: () => import('./userspace/userspace.module').then(m => m.UserspaceModule)
   },
   {
+    path: 'chat',
+   
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
+  },
+
+  {
+    path: 'rate',
+   
+    loadChildren: () => import('./rating/rating.module').then(m => m.RatingModule)
+  },
+  {
     path: 'home',
     
     children: [
@@ -116,5 +127,5 @@ export const Approutes: Routes = [
      
     ]
   },
-  { path: '**', redirectTo: '/dashboard' } // Handle invalid routes
+ // { path: '**', redirectTo: '' } // Handle invalid routes
 ];

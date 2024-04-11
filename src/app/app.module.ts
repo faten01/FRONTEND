@@ -34,6 +34,8 @@ import { UserspaceComponent } from './userspace/userspace.component';
 import { ScheduleModule, RecurrenceEditorModule, AgendaService, DayService, MonthAgendaService, MonthService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { ChatComponent } from './chat/chat.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 
@@ -51,6 +53,8 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     LayoutComponent,
     FooterComponent,
     UserspaceComponent,
+    ChatComponent,
+    RatingComponent,
     
   ],
   imports: [

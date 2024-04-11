@@ -1,0 +1,887 @@
+<header>
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+    
+          <a class="navbar-brand" href="#">
+            <img
+            
+            src="assets/images/2.png"
+              height="70"
+              alt="EXPO"
+              loading="lazy"
+            />
+          </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Map</a>
+              </li>
+              
+  
+  
+              <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
+                <a
+                  ngbDropdownToggle
+                  class="nav-link waves-effect waves-dark"
+                  href="javascript:void(0)"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span>Discover</span>
+                </a>
+                <div ngbDropdownMenu>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+          </ul>
+  
+         
+  
+         
+      </div>
+    
+          <ul class="navbar-nav ms-auto d-flex flex-row">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-bell"></i>
+                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">Some news</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another news</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link me-3 me-lg-0" href="#">
+                <i class="fas fa-fill-drip"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="#">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="flag-united-kingdom flag m-0"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="flag-united-kingdom flag"></i>English
+                    <i class="fa fa-check text-success ms-2"></i
+                  ></a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+                </li>
+              </ul>
+            </li>
+    
+            <li class="nav-item" ngbDropdown placement="bottom-end">
+              <a
+                ngbDropdownToggle
+                class="nav-link waves-effect waves-dark pro-pic"
+                href="javascript:void(0)"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  src="assets/images/users/user1.jpg"
+                  alt="user"
+                  class="rounded-circle"
+                  width="31"
+                />
+                <span class="ms-2">Steve Jobs</span>
+              </a>
+              <div class="dropdown-menu-right" ngbDropdownMenu>
+                <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
+                <a class="dropdown-item" href="javascript:void(0)"> My Balance</a>
+                <a class="dropdown-item" href="javascript:void(0)"> Inbox</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0)"> Account Setting</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0)"> Logout</a>
+              </div>
+            
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="sidebar">
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+          <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+              
+              
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-check-circle-fill me-3"></i><span>Availability</span></a
+              >
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-bell-fill me-3"></i><span>Notifications</span></a
+              >
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="bi bi-ticket-fill me-3 "></i><span>Event Types</span></a
+              >
+              <a href="/userspace" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="fas fa-calendar fa-fw me-3"></i><span>Bookings</span></a
+              >
+              <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+                ><i class="fas fa-users fa-fw me-3"></i><span>Exhibitors</span></a
+              >
+              
+             
+            </div>
+          </div>
+        </nav>
+        </div>
+       
+   
+
+
+<body>
+    
+
+
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="left">
+                <div class="top">
+                    <input type="text" placeholder="Search" />
+                    <a href="javascript:;" class="search"></a>
+                </div>
+                <ul class="people">
+                    <li class="person" data-chat="person1">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/thomas.jpg" alt="" />
+                        <span class="name">Thomas Bangalter</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">I was wondering...</span>
+                    </li>
+                    <li class="person" data-chat="person2">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/dog.png" alt="" />
+                        <span class="name">Dog Woofson</span>
+                        <span class="time">1:44 PM</span>
+                        <span class="preview">I've forgotten how it felt before</span>
+                    </li>
+                    <li class="person" data-chat="person3">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/louis-ck.jpeg" alt="" />
+                        <span class="name">Louis CK</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">But we’re probably gonna need a new carpet.</span>
+                    </li>
+                    <li class="person" data-chat="person4">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/bo-jackson.jpg" alt="" />
+                        <span class="name">Bo Jackson</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">It’s not that bad...</span>
+                    </li>
+                    <li class="person" data-chat="person5">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/michael-jordan.jpg" alt="" />
+                        <span class="name">Michael Jordan</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">Wasup for the third time like is 
+    you blind bitch</span>
+                    </li>
+                    <li class="person" data-chat="person6">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/drake.jpg" alt="" />
+                        <span class="name">Drake</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">howdoyoudoaspace</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top"><span>To: <span class="name">Dog Woofson</span></span></div>
+                <div class="chat" data-chat="person1">
+                    <div class="conversation-start">
+                        <span>Today, 6:48 AM</span>
+                    </div>
+                    <div class="bubble you">
+                        Hello,
+                    </div>
+                    <div class="bubble you">
+                        it's me.
+                    </div>
+                    <div class="bubble you">
+                        I was wondering...
+                    </div>
+                </div>
+                <div class="chat" data-chat="person2">
+                    <div class="conversation-start">
+                        <span>Today, 5:38 PM</span>
+                    </div>
+                    <div class="bubble you">
+                        Hello, can you hear me?
+                    </div>
+                    <div class="bubble you">
+                        I'm in California dreaming
+                    </div>
+                    <div class="bubble me">
+                        ... about who we used to be.
+                    </div>
+                    <div class="bubble me">
+                        Are you serious?
+                    </div>
+                    <div class="bubble you">
+                        When we were younger and free...
+                    </div>
+                    <div class="bubble you">
+                        I've forgotten how it felt before
+                    </div>
+                </div>
+                <div class="chat" data-chat="person3">
+                    <div class="conversation-start">
+                        <span>Today, 3:38 AM</span>
+                    </div>
+                    <div class="bubble you">
+                        Hey human!
+                    </div>
+                    <div class="bubble you">
+                        Umm... Someone took a shit in the hallway.
+                    </div>
+                    <div class="bubble me">
+                        ... what.
+                    </div>
+                    <div class="bubble me">
+                        Are you serious?
+                    </div>
+                    <div class="bubble you">
+                        I mean...
+                    </div>
+                    <div class="bubble you">
+                        It’s not that bad...
+                    </div>
+                    <div class="bubble you">
+                        But we’re probably gonna need a new carpet.
+                    </div>
+                </div>
+                <div class="chat" data-chat="person4">
+                    <div class="conversation-start">
+                        <span>Yesterday, 4:20 PM</span>
+                    </div>
+                    <div class="bubble me">
+                        Hey human!
+                    </div>
+                    <div class="bubble me">
+                        Umm... Someone took a shit in the hallway.
+                    </div>
+                    <div class="bubble you">
+                        ... what.
+                    </div>
+                    <div class="bubble you">
+                        Are you serious?
+                    </div>
+                    <div class="bubble me">
+                        I mean...
+                    </div>
+                    <div class="bubble me">
+                        It’s not that bad...
+                    </div>
+                </div>
+                <div class="chat" data-chat="person5">
+                    <div class="conversation-start">
+                        <span>Today, 6:28 AM</span>
+                    </div>
+                    <div class="bubble you">
+                        Wasup
+                    </div>
+                    <div class="bubble you">
+                        Wasup
+                    </div>
+                    <div class="bubble you">
+                        Wasup for the third time like is <br />you blind bitch
+                    </div>
+    
+                </div>
+                <div class="chat" data-chat="person6">
+                    <div class="conversation-start">
+                        <span>Monday, 1:27 PM</span>
+                    </div>
+                    <div class="bubble you">
+                        So, how's your new phone?
+                    </div>
+                    <div class="bubble you">
+                        You finally have a smartphone :D
+                    </div>
+                    <div class="bubble me">
+                        Drake?
+                    </div>
+                    <div class="bubble me">
+                        Why aren't you answering?
+                    </div>
+                    <div class="bubble you">
+                        howdoyoudoaspace
+                    </div>
+                </div>
+                <div class="write">
+                    <a href="javascript:;" class="write-link attach"></a>
+                    <input type="text" />
+                    <a href="javascript:;" class="write-link smiley"></a>
+                    <a href="javascript:;" class="write-link send"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>document.querySelector('.chat[data-chat=person2]').classList.add('active-chat')
+        document.querySelector('.person[data-chat=person2]').classList.add('active')
+        
+        let friends = {
+            list: document.querySelector('ul.people'),
+            all: document.querySelectorAll('.left .person'),
+            name: ''
+          },
+          chat = {
+            container: document.querySelector('.container .right'),
+            current: null,
+            person: null,
+            name: document.querySelector('.container .right .top .name')
+          }
+        
+        friends.all.forEach(f => {
+          f.addEventListener('mousedown', () => {
+            f.classList.contains('active') || setAciveChat(f)
+          })
+        });
+        
+        function setAciveChat(f) {
+          friends.list.querySelector('.active').classList.remove('active')
+          f.classList.add('active')
+          chat.current = chat.container.querySelector('.active-chat')
+          chat.person = f.getAttribute('data-chat')
+          chat.current.classList.remove('active-chat')
+          chat.container.querySelector('[data-chat="' + chat.person + '"]').classList.add('active-chat')
+          friends.name = f.querySelector('.name').innerText
+          chat.name.innerHTML = friends.name
+        }</script>
+</body>
+<style>
+
+input .font bold   { font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+input .font {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+input::-webkit-input-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    /* Additional styles here */
+}
+
+input:-moz-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    /* Additional styles here */
+    opacity: 1; /* Firefox < 19 */
+}
+
+input::-moz-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    /* Additional styles here */
+    opacity: 1; /* Firefox 19+ */
+}
+
+input:-ms-input-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    /* Additional styles here */
+}
+
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --bg: #f8f8f8;
+    --grey: #999;
+    --dark: #1a1a1a;
+    --light: #e6e6e6;
+    --wrapper: 1000px;
+    --blue: #00b0ff;
+}
+
+body {
+    background-color: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/image.jpg');
+    background-size: cover;
+    background-repeat: none;
+}
+.wrapper {
+    position: relative;
+    left: 50%;
+    width: var(--wrapper);
+    height: 800px;
+    transform: translate(-50%, 0);
+}
+.container {
+    position: relative;
+    top: 50%;
+    left: 40%;
+    width: 70%;
+    height: 75%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    .left {
+        float: left;
+        width: 37.6%;
+        height: 100%;
+        border: 1px solid ;
+        background-color: white;
+        .top {
+            position: relative;
+            width: 100%;
+            height: 96px;
+            padding: 29px;
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                display: block;
+                width: 80%;
+                height: 1px;
+                content: '';
+                background-color: var(--light);
+                transform: translate(-50%, 0);
+            }
+        }
+        input {
+            float: center;
+            width: 188px;
+            height: 42px;
+            padding: 0 15px;
+            border: 1px solid var(--light);
+            background-color: #eceff1;
+            border-radius: 21px;
+            
+        }
+        a.search {
+            display: block;
+            float: left;
+            width: 42px;
+            height: 42px;
+            margin-left: 10px;
+            border: 1px solid var(--light);
+            background-color: var(--blue);
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/name-type.png');
+            background-repeat: no-repeat;
+            background-position: top 12px left 14px;
+            border-radius: 50%;
+        }
+        .people {
+            margin-left: -1px;
+            border-right: 1px solid var(--light);
+            border-left: 1px solid var(--light);
+            width: calc(100% + 2px);
+            .person {
+                position: relative;
+                width: 100%;
+                padding: 12px 10% 16px;
+                cursor: pointer;
+                background-color: var(--white);
+                &:after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    display: block;
+                    width: 80%;
+                    height: 1px;
+                    content: '';
+                    background-color: var(--light);
+                    transform: translate(-50%, 0);
+                }
+                img {
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 12px;
+                    border-radius: 50%;
+																				object-fit: cover;
+                }
+                .name {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: var(--dark);
+                }
+                .time {
+                    font-size: 14px;
+                    position: absolute;
+                    top: 16px;
+                    right: 10%;
+                    padding: 0 0 5px 5px;
+                    color: var(--grey);
+                    background-color: var(--white);
+                }
+                .preview {
+                    font-size: 14px;
+                    display: inline-block;
+                    overflow: hidden !important;
+                    width: 70%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: var(--grey);
+                }
+                &.active,&:hover {
+                    margin-top: -1px;
+                    margin-left: -1px;
+                    padding-top: 13px;
+                    border: 0;
+                    background-color: var(--blue);
+                    width: calc(100% + 2px);
+                    padding-left: calc(10% + 1px);
+                    span {
+                        color: var(--white);
+                        background: transparent;
+                    }
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        position: relative;
+        float: left;
+        width: 62.4%;
+        height: 100%;
+        .top {
+            width: 100%;
+            height: 47px;
+            padding: 15px 29px;
+            background-color: #eceff1;
+            span {
+                font-size: 15px;
+                color: var(--grey);
+                .name {
+                    color: var(--dark);
+                }
+            }
+        }
+        .chat {
+            position: relative;
+            display: none;
+            overflow: hidden;
+            padding: 0 35px 92px;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: var(--light);
+            height: calc(100% - 48px);
+            justify-content: flex-end;
+            flex-direction: column;
+            &.active-chat {
+                display: block;
+                display: flex;
+                .bubble {
+                    transition-timing-function: cubic-bezier(.4,-.04, 1, 1);
+                    @for $i from 1 through 10 {
+                        &:nth-of-type(#{$i}) {
+                            animation-duration: .15s * $i;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        .write {
+            position: absolute;
+            bottom: 29px;
+            left: 30px;
+            height: 42px;
+            padding-left: 8px;
+            border: 1px solid var(--light);
+            background-color: #eceff1;
+            width: calc(100% - 58px);
+            border-radius: 5px;
+            input {
+                font-size: 16px;
+                float: left;
+                width: 347px;
+                height: 40px;
+                padding: 0 10px;
+                color: var(--dark);
+                border: 0;
+                outline: none;
+                background-color: #eceff1;
+            }
+            .write-link {
+                &.attach {
+                    &:before {
+                        display: inline-block;
+                        width: 20px;
+                        height: 42px;
+                        content: '';
+                        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/attachment.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                &.smiley {
+                    &:before {
+                        display: inline-block;
+                        width: 20px;
+                        height: 42px;
+                        content: '';
+                        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/smiley.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                &.send {
+                    &:before {
+                        display: inline-block;
+                        width: 20px;
+                        height: 42px;
+                        margin-left: 11px;
+                        content: '';
+                        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/send.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+            }
+        }
+        .bubble {
+            font-size: 16px;
+            position: relative;
+            display: inline-block;
+            clear: both;
+            margin-bottom: 8px;
+            padding: 13px 14px;
+            vertical-align: top;
+            border-radius: 5px;
+            &:before {
+                position: absolute;
+                top: 19px;
+                display: block;
+                width: 8px;
+                height: 6px;
+                content: '\00a0';
+                transform: rotate(29deg) skew(-35deg);
+            }
+            &.you {
+                float: left;
+                color: var(--white);
+                background-color: var(--blue);
+                align-self: flex-start;
+                animation-name: slideFromLeft;
+                &:before {
+                    left: -3px;
+                    background-color: var(--blue);
+                }
+            }
+            &.me {
+                float: right;
+                color: var(--dark);
+                background-color: #eceff1;
+                align-self: flex-end;
+                animation-name: slideFromRight;
+                &:before {
+                    right: -3px;
+                    background-color: #eceff1;
+                }
+            }
+        }
+        .conversation-start {
+            position: relative;
+            width: 100%;
+            margin-bottom: 27px;
+            text-align: center;
+            span {
+                font-size: 14px;
+                display: inline-block;
+                color: var(--grey);
+                &:before,&:after {
+                    position: absolute;
+                    top: 10px;
+                    display: inline-block;
+                    width: 30%;
+                    height: 1px;
+                    content: '';
+                    background-color: var(--light);
+                }
+                &:before {
+                    left: 0;
+                }
+                &:after {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+@keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideFromLeft {
+    0% {
+        margin-left: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+@keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideFromRight {
+    0% {
+        margin-right: -200px;
+        opacity: 0;
+    }
+    100% {
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+</style> <main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+  </main>
+  
+  
+  <!--Main layout-->
+
+  <style>
+
+
+
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 75px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+.content {
+    margin-left: 250px; /* Adjust according to the sidebar width */
+    padding: 100px;
+}
+
+ .navbar{
+    margin-left: 0px; /* Adjust according to the sidebar width */
+    padding: 0px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+
+}
+
+  </style>

@@ -62,6 +62,9 @@ const colors: Record<string, EventColor> = {
   styleUrls: ['./userspace.component.scss']
 })
 export class UserspaceComponent   {
+  nom!:string
+  date!:string
+  dateFin!: string
 
 
   @ViewChild('modalContent', { static: true })
@@ -98,8 +101,8 @@ export class UserspaceComponent   {
 
   refresh = new Subject<void>();
 
-  events: CalendarEvent[] = [
-    {
+  events: any = [
+    /*{
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
       title: 'A 3 day event',
@@ -136,7 +139,22 @@ export class UserspaceComponent   {
         afterEnd: true,
       },
       draggable: true,
+    },*/
+    {
+      start: this.date,
+      end: this.dateFin,
+      title: this.nom,
+      color: { ...colors['red'] },
+      actions: this.actions,
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
     },
+
+    
   ];
 
   activeDayIsOpen: boolean = true;
@@ -211,27 +229,40 @@ export class UserspaceComponent   {
   }
 
 
-  nom! :String
-  date!:string
-  dateFin!:string
+
+ 
   successMessage !: string 
   errorMessage !: string 
   id!:number
   isLoading:boolean=false;
+  title!: string
 
+ 
+  end!: string
+  
 
 
   constructor(private userspaceservice : UserspaceService) {}
+  
 
   eventData() {
+
+    const startDate = new Date(this.date);
+    const formattedStartDate = startDate.toISOString().slice(0, 19).replace('T', ' ');
+
+    const endDate = new Date(this.dateFin);
+    const formattedEndDate = endDate.toISOString().slice(0, 19).replace('T', ' ');
     var eventData = { 
-     
+     nom:this.nom,
+     date: formattedStartDate,
+     dateFin: formattedEndDate,
      successMessage: this.successMessage,
      errorMessage: this.errorMessage,
      
  
     
     } 
+    
 
   
     this.userspaceservice.postEvents(eventData).subscribe(
@@ -249,8 +280,11 @@ export class UserspaceComponent   {
       }
     );
 
+    
 
+   
 }
+
 
 }
 export interface Event {

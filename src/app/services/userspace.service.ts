@@ -18,7 +18,7 @@ export class UserspaceService {
 
   constructor(private httpClient : HttpClient) { }
 
-  postEvents(eventData:any) {
-    return this.httpClient.post<any>('http://127.0.0.1:8000/api/evenements',eventData);
+  postEvents(eventData:any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/evenements',eventData);
   }
 }

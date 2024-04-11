@@ -60,19 +60,30 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Map</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Discover
-                </a>        
+            
 
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+
+            <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
+              <a
+                ngbDropdownToggle
+                class="nav-link waves-effect waves-dark"
+                href="javascript:void(0)"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span>Discover</span>
+              </a>
+              <div ngbDropdownMenu>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
             </li>
         </ul>
+
+       
 
        
     </div>
@@ -163,37 +174,33 @@
             </ul>
           </li>
   
-          <li class="nav-item dropdown">
+          <li class="nav-item" ngbDropdown placement="bottom-end">
             <a
-              class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
+              ngbDropdownToggle
+              class="nav-link waves-effect waves-dark pro-pic"
+              href="javascript:void(0)"
+              data-toggle="dropdown"
+              aria-haspopup="true"
               aria-expanded="false"
             >
               <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                src="assets/images/users/user1.jpg"
+                alt="user"
                 class="rounded-circle"
-                height="22"
-                alt="Avatar"
-                loading="lazy"
+                width="31"
               />
+              <span class="ms-2">Steve Jobs</span>
             </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a class="dropdown-item" href="#">My profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Settings</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Logout</a>
-              </li>
-            </ul>
+            <div class="dropdown-menu-right" ngbDropdownMenu>
+              <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
+              <a class="dropdown-item" href="javascript:void(0)"> My Balance</a>
+              <a class="dropdown-item" href="javascript:void(0)"> Inbox</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void(0)"> Account Setting</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void(0)"> Logout</a>
+            </div>
+          
           </li>
         </ul>
       </div>
@@ -324,8 +331,11 @@
           <input
             type="text"
             class="form-control"
-            [(ngModel)]="event.title"
+            id="nom"
+            name="nom"
+            [(ngModel)]="nom"
             (keyup)="refresh.next()"
+            (ngSubmit)="eventData()"
           />
         </td>
         <td>
@@ -343,8 +353,8 @@
           />
           <input
             type="color"
-            [ngModel]="event?.color?.secondaryText ?? '#1e90ff'"
-            (ngModelChange)="event?.color?event.color = $event:null"
+            [ngModel]="event?.color?.secondaryText ?? '#E5FFCC'"
+            (ngModelChange)="event.color = $event; refresh.next()"
             (change)="refresh.next()"
           />
         </td>
@@ -352,14 +362,16 @@
           <input
             class="form-control"
             type="text"
+            id="date"
+            name="date"
             mwlFlatpickr
-            [(ngModel)]="event.start"
+            [(ngModel)]="date"
             (ngModelChange)="refresh.next()"
             [altInput]="true"
             [convertModelValue]="true"
             [enableTime]="true"
-            dateFormat="Y-m-dTH:i"
-            altFormat="F j, Y H:i"
+            dateFormat="Y-m-d"
+            altFormat="F j, Y "
             placeholder="Not set"
           />
         </td>
@@ -367,8 +379,10 @@
           <input
             class="form-control"
             type="text"
+            id="dateFin"
+            name="dateFin"
             mwlFlatpickr
-            [(ngModel)]="event.end"
+            [(ngModel)]="dateFin"
             (ngModelChange)="refresh.next()"
             [altInput]="true"
             [convertModelValue]="true"
@@ -376,13 +390,19 @@
             dateFormat="Y-m-dTH:i"
             altFormat="F j, Y H:i"
             placeholder="Not set"
+            (ngSubmit)="eventData()"
           />
         </td>
         <td>
           <button class="btn btn-danger" (click)="deleteEvent(event)">
             Delete
           </button>
+          <button class="btn btn-success" (click)="eventData()">
+            Add
+          </button>
         </td>
+        
+        
       </tr>
     </tbody>
   </table>
