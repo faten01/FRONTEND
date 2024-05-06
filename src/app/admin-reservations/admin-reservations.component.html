@@ -1,0 +1,17 @@
+<header>
+
+
+    <app-navigation></app-navigation>
+</header>
+
+<body>
+<ul>
+    <li *ngFor="let reservation of reservations">
+      {{ reservation.user_id }} - {{ reservation.event_id }} - Status: {{ reservation.acceptation }}
+      <button (click)="updateStatus(reservation.id, 'approved')">Approve</button>
+      <button (click)="updateStatus(reservation.id, 'rejected')">Reject</button>
+    </li>
+  </ul>
+</body>
+
+  

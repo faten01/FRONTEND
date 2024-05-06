@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="event_id">Event ID:</label>
+      <input type="text" id="event_id" [(ngModel)]="model.event_id" name="event_id">
+    </div>
+    <div>
+      <label for="user_id">User ID:</label>
+      <input type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
+    </div>
+    <div>
+        <label for="stand_id">stand ID:</label>
+        <input type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
+      </div>
+    <button type="submit">Submit Reservation</button>
+  </form>
+  

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RegisterService } from '../services/register.service';
 import { NgFor, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -12,11 +13,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 userData: any={};
+errors = {
+  nom:null,
+  email:null,
+  MotDepasse:null,
+}
 onSubmit() {
   console.log('Register form submitted with data:', this.userData);
 }
 
-constructor(private registerservice :RegisterService){}
+constructor(private registerservice :RegisterService, private router:Router){}
 
 nom!:string
 prenom!:string
@@ -38,6 +44,8 @@ PostData(){
   this.registerservice.postUsers(RegisterData).subscribe(
     (response) => {
       console.log('Response received:', response);
+      this.router.navigate(['/login']);
+
       
     },
     (error) => {

@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #d8edfc;">
+<!--<nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #d8edfc;">
     <a class="navbar-brand" href="#" style="font-family: Verdana">Expo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,6 @@
             </li>
         </ul>
 
-        <!-- Move this <ul> to the other end -->
        
     </div>
     <ul class="navbar-nav ml-auto">
@@ -39,4 +38,78 @@
             </form>
         </li>
     </ul>
-</nav>
+</nav>-->
+
+<nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img
+        
+        src="assets/images/2.png"
+          height="70"
+          alt="EXPO"
+          loading="lazy"
+        />
+      </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Map</a>
+          </li>
+          
+
+
+          <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
+            <a
+              ngbDropdownToggle
+              class="nav-link waves-effect waves-dark"
+              href="javascript:void(0)"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span>Discover</span>
+            </a>
+            <div ngbDropdownMenu>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+      </ul>
+
+     
+
+     
+  </div>
+
+        
+          <ul class="navbar-nav ml-auto">
+            <li>
+                <form class="form-inline">
+                    <a routerLink="/register"button class="btn btn-outline-dark" *ngIf="!loggedIn" type="button">Sign up</a>
+                    <a routerLink="/login" button class="btn btn-outline-dark" *ngIf="!loggedIn" type="button">Sign in</a>
+                </form>
+            </li>
+        </ul>
+        
+        
+     
+    </div>
+  </nav>

@@ -1,0 +1,250 @@
+<header><nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img
+        
+        src="assets/images/2.png"
+          height="70"
+          alt="EXPO"
+          loading="lazy"
+        />
+      </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Map</a>
+          </li>
+          
+
+
+          <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
+            <a
+              ngbDropdownToggle
+              class="nav-link waves-effect waves-dark"
+              href="javascript:void(0)"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span>Discover</span>
+            </a>
+            <div ngbDropdownMenu>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+      </ul>
+
+     
+
+     
+  </div>
+
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bell"></i>
+            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li>
+              <a class="dropdown-item" href="#">Some news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Another news</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link me-3 me-lg-0" href="#">
+            <i class="fas fa-fill-drip"></i>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link" href="#">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="flag-united-kingdom flag m-0"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#"
+                ><i class="flag-united-kingdom flag"></i>English
+                <i class="fa fa-check text-success ms-2"></i
+              ></a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item" ngbDropdown placement="bottom-end">
+          <a
+            ngbDropdownToggle
+            class="nav-link waves-effect waves-dark pro-pic"
+            href="javascript:void(0)"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="assets/images/users/user1.jpg"
+              alt="user"
+              class="rounded-circle"
+              width="31"
+            />
+            <span class="ms-2">Steve Jobs</span>
+          </a>
+          <div class="dropdown-menu-right" ngbDropdownMenu>
+            <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
+            <a class="dropdown-item" href="javascript:void(0)"> My Balance</a>
+            <a class="dropdown-item" href="javascript:void(0)"> Inbox</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)"> Account Setting</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)"> Logout</a>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="sidebar">
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          
+          
+         
+          <a href="/notification" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="bi bi-bell-fill me-3"></i><span>Notifications</span></a
+          >
+          <a href="/type" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="bi bi-ticket-fill me-3 "></i><span>Event Types</span></a
+          >
+          <a href="/userspace" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-calendar fa-fw me-3"></i><span>Bookings</span></a
+          >
+          <a href="#" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-users fa-fw me-3"></i><span>Exhibitors</span></a
+          >
+          <a href="/chat" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="bi bi-chat-fill me-3"></i><span>Chat</span></a
+          >
+          
+         
+        </div>
+      </div>
+    </nav>
+    </div>
+    <main style="margin-top: 58px;">
+    <div class="container pt-4"></div>
+  </main>
+  
+  
+  <!--Main layout-->
+
+<head>
+  <h1>Notifications</h1>
+</head>
+
+<body><html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=width-device, initial-scale=1.0">
+     <h1>Notifications</h1>
+      <!-- Include any CSS for augmented-ui or other styles if available -->
+  </head>
+  <body>
+    
+      
+      <ul>
+        <input type="checkbox" checked aria-label="Tick the checkbox to open/close the prompt" class="checkbox">
+      <div class="message_container">
+          <div class="message" augmented-ui="exe tl-clip br-clip">
+              <div class="title" augmented-ui="exe tl-clip br-clip">Notification</div>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, corporis eum, dolorum sed voluptate tempora unde placeat quas ut adipisci illum ab ea commodi sunt. Dolor dolorum neque facere tempora.</p>
+          </div>
+      </div>
+      <br>
+     
+      
+      <div class="message_container">
+        <div class="message" augmented-ui="exe tl-clip br-clip">
+            <div class="title" augmented-ui="exe tl-clip br-clip">Notification</div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, corporis eum, dolorum sed voluptate tempora unde placeat quas ut adipisci illum ab ea commodi sunt. Dolor dolorum neque facere tempora.</p>
+        </div>
+    </div></ul>
+  
+      <script>
+          var rsw_powered = {};
+          rsw_powered["augmented-ui"] = true;
+      </script>
+  <script></script>
+</body>

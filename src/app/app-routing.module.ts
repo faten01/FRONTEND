@@ -62,7 +62,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 
 export const Approutes: Routes = [
- // { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'dashboard',
     component: FullComponent,
@@ -112,6 +112,36 @@ export const Approutes: Routes = [
     path: 'rate',
    
     loadChildren: () => import('./rating/rating.module').then(m => m.RatingModule)
+  },
+
+  {
+    path: 'notification',
+   
+    loadChildren: () => import('./notification/notification.module').then(m => m.NotificationModule)
+  },
+
+  {
+    path: 'type',
+   
+    loadChildren: () => import('./event-type/event-type.module').then(m => m.EventTypeModule)
+  },
+
+  {
+    path: 'Notif',
+   
+    loadChildren: () => import('./add-notif/add-notif.module').then(m => m.AddNotifModule)
+  },
+
+  {
+    path: 'adminreserv',
+   
+    loadChildren: () => import('./admin-reservations/admin-reservations.module').then(m => m.AdminReservationsModule)
+  },
+
+  {
+    path: 'reservation',
+   
+    loadChildren: () => import('./reservation-form/reservation-form.module').then(m => m.ReservationFormModule)
   },
   {
     path: 'home',

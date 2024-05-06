@@ -1,21 +1,55 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit, EventEmitter, Output, OnInit } from '@angular/core';
 import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
+
 
 declare var $: any;
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports:[NgbDropdownModule],
+  imports:[NgbDropdownModule,FormsModule, ReactiveFormsModule , NgFor, NgIf],
   templateUrl: './navigation.component.html'
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent  {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public showSearch = false;
+  checkbox:boolean = false;
 
-  constructor(private modalService: NgbModal) {
+
+  constructor(private modalService: NgbModal, private auth:AuthService, private router:Router, private log:LoginService) {
   }
+
+
+  user:any;
+  nom:any;
+
+ /* ngOnInit(): void {
+    // Check status
+    this.auth.status().subscribe((res)=>{
+      console.log(res);
+    })
+    this.auth.user().subscribe((res)=>{
+      this.nom = res;
+    }, (err) =>{
+      console.log(err);
+    })
+  }*/
+
+  
+  loggedIn:boolean = false;
+  
+
+
+
+
+
+
 
   // This is for Notifications
   notifications: Object[] = [

@@ -36,6 +36,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { ChatComponent } from './chat/chat.component';
 import { RatingComponent } from './rating/rating.component';
+import { NotificationComponent } from './notification/notification.component';
+import { EventTypeComponent } from './event-type/event-type.component';
+import { AddNotifComponent } from './add-notif/add-notif.component';
+import { ReservationFormComponent } from './reservation-form/reservation-form.component';
+import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
 
 
 
@@ -55,6 +60,11 @@ import { RatingComponent } from './rating/rating.component';
     UserspaceComponent,
     ChatComponent,
     RatingComponent,
+    NotificationComponent,
+    EventTypeComponent,
+    AddNotifComponent,
+    ReservationFormComponent,
+    AdminReservationsComponent,
     
   ],
   imports: [

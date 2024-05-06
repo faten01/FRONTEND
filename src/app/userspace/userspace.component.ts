@@ -27,6 +27,9 @@ import {
   addHours,
 } from 'date-fns';
 import { EventColor } from 'calendar-utils';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -61,10 +64,13 @@ const colors: Record<string, EventColor> = {
   templateUrl: './userspace.component.html',
   styleUrls: ['./userspace.component.scss']
 })
-export class UserspaceComponent   {
+export class UserspaceComponent implements OnInit    {
   nom!:string
   date!:string
   dateFin!: string
+  id!:number
+  checkbox:boolean = false;
+
 
 
   @ViewChild('modalContent', { static: true })
@@ -233,17 +239,49 @@ export class UserspaceComponent   {
  
   successMessage !: string 
   errorMessage !: string 
-  id!:number
   isLoading:boolean=false;
   title!: string
-
- 
   end!: string
   
 
 
-  constructor(private userspaceservice : UserspaceService) {}
+  constructor(private userspaceservice : UserspaceService, private auth:AuthService, private router : Router, private login: LoginService) {}
+ 
   
+  ngOnInit(){
+   
+      this.userspaceservice.getEvents().subscribe({
+        next: (res) => {
+          for (let i = 0; i < res.length; i++) {
+            this.events.push({
+              title: res[i].nom,
+              start: new Date(res[i].date),
+              end: new Date(res[i].dateFin),
+              color: colors['blue'], // or any logic to assign colors
+              draggable: true,
+              resizable: {
+                beforeStart: true,
+                afterEnd: true,
+              },
+              allDay: true,
+            });
+          }
+          this.refresh.next(); // Refresh the view
+        },
+        error: (error) => {
+          console.error('Error fetching events:', error);
+        }
+      });
+    }
+   
+  
+
+  
+
+ 
+
+ 
+    
 
   eventData() {
 
@@ -278,7 +316,46 @@ export class UserspaceComponent   {
         console.error('Error occurred:', error.error);
         this.errorMessage = 'Form submission failed.';
       }
-    );
+    );}
+
+
+
+ 
+
+    user:any;
+ /* userP(): void {
+    // Check status
+    this.auth.status().subscribe((res)=>{
+      console.log(res);
+    })
+    this.auth.user().subscribe((res)=>{
+      this.user = res;
+    }, (err) =>{
+      console.log(err);
+    })
+  }*/
+
+
+  loggedIn:boolean = false;
+
+ /* ngOnInit1(): void {
+    this.auth.status().subscribe((res) => {
+      this.loggedIn = res;
+      // console.log('navbar:' + this.loggedIn);
+    }, (err) => {
+      console.log(err);
+    })
+  }*/
+
+
+ 
+
+
+
+  
+
+
+  
 
     
 
@@ -286,11 +363,13 @@ export class UserspaceComponent   {
 }
 
 
-}
+
 export interface Event {
-  id_event: number;
+  id :number;
   nom: string;
   date: Date;
   dateFin: Date;
   // Add any other properties you need
 }
+
+
