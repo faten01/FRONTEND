@@ -6,9 +6,9 @@
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-4">
-          
-          
-          
+
+
+
           <a href="/notification" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="bi bi-bell-fill me-3"></i><span>Notifications</span></a
           >
@@ -24,12 +24,12 @@
           <a href="/chat" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="bi bi-chat-fill me-3"></i><span>Chat</span></a
           >
-          
-         
+
+
         </div>
       </div>
     </nav>
-  
+
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div class="container-fluid">
         <button
@@ -43,10 +43,10 @@
         >
           <i class="fas fa-bars"></i>
         </button>
-  
+
         <a class="navbar-brand" href="#">
           <img
-          
+
           src="assets/images/2.png"
             height="70"
             alt="EXPO"
@@ -61,7 +61,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Map</a>
             </li>
-            
+
 
 
             <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
@@ -84,11 +84,11 @@
             </li>
         </ul>
 
-       
 
-       
+
+
     </div>
-  
+
         <ul class="navbar-nav ms-auto d-flex flex-row">
           <li class="nav-item dropdown">
             <a
@@ -117,7 +117,7 @@
               </li>
             </ul>
           </li>
-  
+
           <li class="nav-item">
             <a class="nav-link me-3 me-lg-0" href="#">
               <i class="fas fa-fill-drip"></i>
@@ -128,9 +128,9 @@
               <i class="fab fa-github"></i>
             </a>
           </li>
-  
-        
-  
+
+
+
           <li class="nav-item" ngbDropdown placement="bottom-end" >
             <a
               ngbDropdownToggle
@@ -146,7 +146,7 @@
                 class="rounded-circle"
                 width="31"
               />
-              <span class="ms-2">Steve Jobs</span>
+              <span class="ms-2">{{user.nom}} {{user.prenom}}</span>
             </a>
             <div class="dropdown-menu-right" ngbDropdownMenu>
               <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
@@ -155,9 +155,9 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="javascript:void(0)"> Account Setting</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="javascript:void(0)"> Logout</a>
+              <a class="dropdown-item" href="javascript:void(0)" (click)="logout()"> Logout</a>
             </div>
-          
+
           </li>
         </ul>
       </div>
@@ -358,8 +358,8 @@
             Add
           </button>
         </td>
-        
-        
+
+
       </tr>
     </tbody>
   </table>
@@ -368,19 +368,19 @@
 </div>
 
 
- 
+
 
   </body>
     <!-- Navbar -->
- 
+
   <!--Main Navigation-->
-  
+
   <!--Main layout-->
   <main style="margin-top: 58px;">
     <div class="container pt-4"></div>
   </main>
-  
-  
+
+
   <!--Main layout-->
 
   <style>

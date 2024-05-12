@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
-
 declare var $: any;
 
 @Component({
@@ -25,26 +24,27 @@ export class NavigationComponent  {
   constructor(private modalService: NgbModal, private auth:AuthService, private router:Router, private log:LoginService) {
   }
 
-
+  token : any;
+  data:any;
   user:any;
   nom:any;
 
- /* ngOnInit(): void {
-    // Check status
-    this.auth.status().subscribe((res)=>{
-      console.log(res);
-    })
-    this.auth.user().subscribe((res)=>{
-      this.nom = res;
-    }, (err) =>{
-      console.log(err);
-    })
-  }*/
+ ngOnInit(): void {
 
-  
+    this.token = localStorage.getItem('token')
+    this.user = this.log.customJwtDecode(this.token)
+
+  }
+
+
   loggedIn:boolean = false;
-  
 
+
+
+
+  logout(){
+    this.log.logout('token', this.router)
+  }
 
 
 
@@ -146,3 +146,5 @@ export class NavigationComponent  {
 
   ngAfterViewInit() { }
 }
+
+

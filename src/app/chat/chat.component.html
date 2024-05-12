@@ -12,10 +12,10 @@
           >
             <i class="fas fa-bars"></i>
           </button>
-    
+
           <a class="navbar-brand" href="#">
             <img
-            
+
             src="assets/images/2.png"
               height="70"
               alt="EXPO"
@@ -30,9 +30,9 @@
               <li class="nav-item">
                   <a class="nav-link" href="#">Map</a>
               </li>
-              
-  
-  
+
+
+
               <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
                 <a
                   ngbDropdownToggle
@@ -52,12 +52,12 @@
                 </div>
               </li>
           </ul>
-  
-         
-  
-         
+
+
+
+
       </div>
-    
+
           <ul class="navbar-nav ms-auto d-flex flex-row">
             <li class="nav-item dropdown">
               <a
@@ -86,7 +86,7 @@
                 </li>
               </ul>
             </li>
-    
+
             <li class="nav-item">
               <a class="nav-link me-3 me-lg-0" href="#">
                 <i class="fas fa-fill-drip"></i>
@@ -97,9 +97,9 @@
                 <i class="fab fa-github"></i>
               </a>
             </li>
-    
-            
-    
+
+
+
             <li class="nav-item" ngbDropdown placement="bottom-end">
               <a
                 ngbDropdownToggle
@@ -115,7 +115,7 @@
                   class="rounded-circle"
                   width="31"
                 />
-                <span class="ms-2">Steve Jobs</span>
+                <span class="ms-2">{{user.nom}} {{user.prenom}}</span>
               </a>
               <div class="dropdown-menu-right" ngbDropdownMenu>
                 <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
@@ -126,7 +126,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0)"> Logout</a>
               </div>
-            
+
             </li>
           </ul>
         </div>
@@ -136,9 +136,9 @@
         <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
           <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
-              
-              
-             
+
+
+
               <a href="/notification" class="list-group-item list-group-item-action py-2 ripple"
                 ><i class="bi bi-bell-fill me-3"></i><span>Notifications</span></a
               >
@@ -154,18 +154,18 @@
               <a href="/chat" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="bi bi-chat-fill me-3"></i><span>Chat</span></a
           >
-              
-             
+
+
             </div>
           </div>
         </nav>
         </div>
-       
-   
+
+
 
 
 <body>
-    
+
 
 
 
@@ -206,7 +206,7 @@
                         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/michael-jordan.jpg" alt="" />
                         <span class="name">Michael Jordan</span>
                         <span class="time">2:09 PM</span>
-                        <span class="preview">Wasup for the third time like is 
+                        <span class="preview">Wasup for the third time like is
     you blind bitch</span>
                     </li>
                     <li class="person" data-chat="person6">
@@ -318,7 +318,7 @@
                     <div class="bubble you">
                         Wasup for the third time like is <br />you blind bitch
                     </div>
-    
+
                 </div>
                 <div class="chat" data-chat="person6">
                     <div class="conversation-start">
@@ -351,7 +351,7 @@
     </div>
     <script>document.querySelector('.chat[data-chat=person2]').classList.add('active-chat')
         document.querySelector('.person[data-chat=person2]').classList.add('active')
-        
+
         let friends = {
             list: document.querySelector('ul.people'),
             all: document.querySelectorAll('.left .person'),
@@ -363,13 +363,13 @@
             person: null,
             name: document.querySelector('.container .right .top .name')
           }
-        
+
         friends.all.forEach(f => {
           f.addEventListener('mousedown', () => {
             f.classList.contains('active') || setAciveChat(f)
           })
         });
-        
+
         function setAciveChat(f) {
           friends.list.querySelector('.active').classList.remove('active')
           f.classList.add('active')
@@ -438,7 +438,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  
+
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/image.jpg');
     background-size: cover;
     background-repeat: none;
@@ -489,7 +489,7 @@ body {
             border: 1px solid var(--light);
             background-color: #eceff1;
             border-radius: 21px;
-            
+
         }
         a.search {
             display: block;
@@ -618,7 +618,7 @@ body {
                 }
             }
 
-            
+
         }
         .write {
             position: absolute;
@@ -790,8 +790,8 @@ body {
 </style> <main style="margin-top: 58px;">
     <div class="container pt-4"></div>
   </main>
-  
-  
+
+
   <!--Main layout-->
 
   <style>

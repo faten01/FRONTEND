@@ -30,6 +30,7 @@ import { EventColor } from 'calendar-utils';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { jwtDecode } from 'jwt-decode';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -160,7 +161,7 @@ export class UserspaceComponent implements OnInit    {
       draggable: true,
     },
 
-    
+
   ];
 
   activeDayIsOpen: boolean = true;
@@ -236,20 +237,23 @@ export class UserspaceComponent implements OnInit    {
 
 
 
- 
-  successMessage !: string 
-  errorMessage !: string 
+
+  successMessage !: string
+  errorMessage !: string
   isLoading:boolean=false;
   title!: string
   end!: string
-  
+
 
 
   constructor(private userspaceservice : UserspaceService, private auth:AuthService, private router : Router, private login: LoginService) {}
- 
-  
+
+  token:any;
   ngOnInit(){
-   
+
+    this.token = localStorage.getItem('token');
+    this.user = this.login.customJwtDecode(this.token);
+
       this.userspaceservice.getEvents().subscribe({
         next: (res) => {
           for (let i = 0; i < res.length; i++) {
@@ -273,15 +277,15 @@ export class UserspaceComponent implements OnInit    {
         }
       });
     }
-   
-  
 
-  
 
- 
 
- 
-    
+
+
+
+
+
+
 
   eventData() {
 
@@ -290,19 +294,19 @@ export class UserspaceComponent implements OnInit    {
 
     const endDate = new Date(this.dateFin);
     const formattedEndDate = endDate.toISOString().slice(0, 19).replace('T', ' ');
-    var eventData = { 
+    var eventData = {
      nom:this.nom,
      date: formattedStartDate,
      dateFin: formattedEndDate,
      successMessage: this.successMessage,
      errorMessage: this.errorMessage,
-     
- 
-    
-    } 
-    
 
-  
+
+
+    }
+
+
+
     this.userspaceservice.postEvents(eventData).subscribe(
       (response) => {
         console.log('Response received:', response);
@@ -310,9 +314,9 @@ export class UserspaceComponent implements OnInit    {
         // Handle the response from the server
       },
       (error) => {
-       
-        
-        
+
+
+
         console.error('Error occurred:', error.error);
         this.errorMessage = 'Form submission failed.';
       }
@@ -320,46 +324,18 @@ export class UserspaceComponent implements OnInit    {
 
 
 
- 
+
 
     user:any;
- /* userP(): void {
-    // Check status
-    this.auth.status().subscribe((res)=>{
-      console.log(res);
-    })
-    this.auth.user().subscribe((res)=>{
-      this.user = res;
-    }, (err) =>{
-      console.log(err);
-    })
-  }*/
 
 
   loggedIn:boolean = false;
 
- /* ngOnInit1(): void {
-    this.auth.status().subscribe((res) => {
-      this.loggedIn = res;
-      // console.log('navbar:' + this.loggedIn);
-    }, (err) => {
-      console.log(err);
-    })
-  }*/
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
 
-
- 
-
-
-
-  
-
-
-  
-
-    
-
-   
 }
 
 

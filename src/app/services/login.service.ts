@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 import { Observable, tap } from 'rxjs';
 
 @Injectable({
@@ -15,7 +17,17 @@ export class LoginService {
   }
 
 
+  customJwtDecode(token: string) {
+  return jwtDecode(token);
+  }
 
-  
+  logout(token: string, router: Router){
+    localStorage.removeItem(token);
+    router.navigate(['/login'])
+
+  }
+
+
+
 
 }

@@ -12,7 +12,7 @@
     <a class="nav-link waves-effect waves-dark"  href="/register">Register</a></li>
     <li class="nav-item">
       <a class="nav-link waves-effect waves-dark"  href="/login">log in</a></li>
-    
+
 
   <!-- ============================================================== -->
   <!-- create new -->
@@ -58,7 +58,7 @@
         class="rounded-circle"
         width="31"
       />
-      <span class="ms-2" *ngIf="user">{{user.nom}}</span>
+      <span class="ms-2" *ngIf="user">{{user.nom}} {{user.prenom}}</span>
     </a>
     <div class="dropdown-menu-right" ngbDropdownMenu>
       <a class="dropdown-item" href="javascript:void(0)"> My Profile</a>
@@ -67,7 +67,7 @@
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="javascript:void(0)"> Account Setting</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="javascript:void(0)" > Logout</a>
+      <a class="dropdown-item" href="javascript:void(0)" (click)="logout()"> Logout</a>
     </div>
   </li>
   <!-- ============================================================== -->

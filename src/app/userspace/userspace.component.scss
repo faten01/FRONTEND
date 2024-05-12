@@ -1,0 +1,38 @@
+body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 992px) {
+  .main-content {
+    padding-left: 240px;
+  }
+}
+@media (max-width: 991px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 75px 0 0;
+  width: 240px;
+  z-index: 600;
+}
+.sidebar .active {
+  border-radius: 5px;
+}
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.main-content {
+  margin-left: 250px;
+  padding: 100px;
+}
+

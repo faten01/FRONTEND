@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     box-shadow: 0px 5px 10px 0px #aaa;
     position: fixed;
     width: 100%;
@@ -9,40 +9,39 @@
     height: 70px;
 }
 
-.navbar-container{
+.navbar-container {
     display: flex;
     justify-content: space-between;
-    height: 64px;
     align-items: center;
+    height: 100%;
 }
 
-.menu-items{
-    order: 2;
+.logo {
+    font-size: 2rem; /* Adjust the size of the logo */
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+.menu-items {
     display: flex;
 }
-.logo{
-    order: 1;
-    font-size: 2.3rem;
-}
 
-.menu-items li{
+.menu-items li {
     list-style: none;
     margin-left: 1.5rem;
     font-size: 1.3rem;
 }
 
-.navbar a{
+.navbar a {
     color: #444;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #117964;
 }
 
 .nav-button {
-    margin-right: 70px; /* Adjust the spacing as needed */
+    margin-right: 20px; /* Adjust the spacing as needed */
 }
-
