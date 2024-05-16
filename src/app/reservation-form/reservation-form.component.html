@@ -1,3 +1,66 @@
+<div class="inputForm">
+    <div style="text-align: center;">
+      Name *: <input type="text" id="Username" required>
+      Number of Seats *: <input type="number" id="Numseats" required>
+      <br/><br/>
+      <button (click)="takeData()">Start Selecting</button>
+    </div>
+  </div>
+  
+  <div class="seatStructure">
+    <div style="text-align: center;">
+        <table id="seatsBlock">
+            <tr>
+                <td colspan="5"><div class="screen">Expo plan</div></td>
+            </tr>
+            <!-- Your table rows for seat selection -->
+            <ng-container *ngFor="let stand of stands; let i = index">
+                <!-- Start a new row after every 5 stands -->
+                <ng-container *ngIf="i % 5 === 0">
+                    <tr>
+                </ng-container>
+                <td>
+                    <!-- Display stand photo -->
+                    <div>
+                        <img [src]="stand.photo" alt="Uploaded Image" (click)="openModal(stand.photo)">
+                    </div>
+                    <!-- Button to display stand data -->
+                    <div>
+                        <button type="button" class="btn btn-outline-info" (click)="showStandData(stand)">Show Stand Data</button>
+                    </div>
+                    <!-- Hidden div containing stand information -->
+                    <div style="display: none;">
+                        <p hidden>id: {{ stand.id_stand }}</p>
+                        <p>Numéro: {{ stand.numero }}</p>
+                        <p>Sperficie: {{ stand.superficie }}</p>
+                        <p>Longeur: {{ stand.longeur }}</p>
+                        <p>Largeur: {{ stand.largeur }}</p>
+                        <p>Prix: {{ stand.prix }} TND</p>
+                        <p>Etat: {{ stand.etat }}</p>
+                    </div>
+                </td>
+                <!-- End a row after every 5 stands -->
+                <ng-container *ngIf="(i + 1) % 5 === 0 || i === stands.length - 1">
+                    
+                </ng-container>
+            </ng-container>
+            <tr>
+                <td colspan="5" rowspan="20">
+                    <div class="smallBox greenBox">Selected Seat</div> <br/>
+                    <div class="smallBox redBox">Reserved Seat</div><br/>
+                    <div class="smallBox emptyBox">Empty Seat</div><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+  
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <span class="close"  (click)="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+  
 <form (ngSubmit)="onSubmit()">
     <div>
       <label for="event_id">Event ID:</label>
@@ -8,9 +71,15 @@
       <input type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
     </div>
     <div>
+        <div class="row center">
+            <h1>{{model.stand_id}}</h1>
+        </div>
         <label for="stand_id">stand ID:</label>
         <input type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
       </div>
+      <input type="hidden" name="user_id" [value]="userId">
+     
     <button type="submit">Submit Reservation</button>
   </form>
+
   

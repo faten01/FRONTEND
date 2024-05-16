@@ -13,11 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
 userData: any={};
-errors = {
-  nom:null,
-  email:null,
-  MotDepasse:null,
-}
+
 onSubmit() {
   console.log('Register form submitted with data:', this.userData);
 }
@@ -29,7 +25,7 @@ prenom!:string
 email!:string
 telephone!:string
 MotDepasse!:string
-
+errors:any=[]
 
 PostData(){
   var RegisterData = {
@@ -44,13 +40,18 @@ PostData(){
   this.registerservice.postUsers(RegisterData).subscribe(
     (response) => {
       console.log('Response received:', response);
-      this.router.navigate(['/login']);
+      //this.router.navigate(['/login']);
+
 
       
     },
-    (error) => {
+    (err:any) => {
      
-      console.error('Error occurred:', error.error);
+      console.error('Error occurred:', err.error);
+      this.errors= err.error.message
+      console.log('Error occurred:', this.errors);
+
+    
     }
   );
 

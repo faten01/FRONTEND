@@ -15,4 +15,9 @@ export class AboutService {
 
 
   }
+
+
+  getStands() {
+    return this.httpClient.get<any[]>('http://127.0.0.1:8000/api/stands');
+  }
 }

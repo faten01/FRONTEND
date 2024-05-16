@@ -41,6 +41,10 @@
                 <input type="text" id="etat" [(ngModel)]='etat' name ='etat'  class="form-control form-control-lg" />
                 <label class="form-label" for="etat">etat</label>
               </div>
+              <input type="file" (change)="handleImageChange($event)" multiple>
+
+              
+              
 
               <!--<div class="d-flex justify-content-between align-items-center mb-4">
              

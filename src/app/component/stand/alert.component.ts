@@ -32,6 +32,7 @@ export class NgbdAlertBasicComponent  {
   prix !:Number
   successMessage !: string 
   errorMessage !: string 
+  photos: string[] = [];
 
   
 
@@ -53,13 +54,52 @@ export class NgbdAlertBasicComponent  {
     prix :0};*/
 
   
-  constructor(private alertService : AlertService) {
+  constructor(private alertService : AlertService, private http: HttpClient,) {
 
-    
-
-   
-   
   }
+
+
+
+  handleImageChange(event: any): void {
+    const files: File[] = Array.from(event.target.files);
+    
+    files.forEach((file: File) => {
+      this.readFile(file);
+    });
+  }
+
+  readFile(file: File): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64String: string = reader.result as string;
+      if (!this.photos) {
+        this.photos = []; // Initialize photos as an array if it's not already
+      }
+      this.photos.push(base64String);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  resizeImage(imageURL: any): Promise<any> {
+    return new Promise((resolve) => {
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 200;
+        canvas.height = 200;
+        const ctx = canvas.getContext('2d');
+        if (ctx != null) {
+          ctx.drawImage(image, 0, 0, 200, 200);
+        }
+        var data = canvas.toDataURL('image/jpeg', 1);
+        resolve(data);
+      };
+      image.src = imageURL;
+    });
+  }
+
+
+ 
   /*ngOnInit(): void {
     this.getDataFromServer();
   }
@@ -116,8 +156,8 @@ export class NgbdAlertBasicComponent  {
       etat:this.etat,
       prix :this.prix,
       successMessage: this.successMessage,
-      errorMessage: this.errorMessage
-  
+      errorMessage: this.errorMessage,
+      photo: this.photos.join(','),   
     } 
 
    

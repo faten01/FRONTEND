@@ -27,8 +27,9 @@ export class LoginComponent {
   constructor(private router:Router,private loginservice :LoginService, private authservice: AuthService){}
 
 email!:string
-MotDepasse!:string
+MotDePasse!:string
 role!:string
+errors:any=[]
 
 
 
@@ -37,7 +38,7 @@ role!:string
 PostData(){
   var LoginData = {
    email:this.email,
-   MotDePasse:this.MotDepasse,
+   MotDePasse:this.MotDePasse,
   }
 
 
@@ -59,9 +60,12 @@ PostData(){
       }
       
     },
-    (error) => {
+    (err) => {
      
-      console.error('Error occurred:', error.error);
+      console.error('Error occurred:', err.error);
+      this.errors= err.error.errors
+      console.error('Error occurred:', this.errors);
+
     }
   );
 
