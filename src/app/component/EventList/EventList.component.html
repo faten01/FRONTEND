@@ -3,77 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Information</title>
-    <a routerLink="/component/buttons" class="btn btn-success" >add user</a>
-    
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+  <title>Event List</title>
 </head>
 <body>
-  
-  <h2 style="display: flex; justify-content: space-between;">User Information
-    <a routerLink="/component/buttons" class="btn btn-primary">Add User</a>
+  <h2 style="display: flex; justify-content: space-between;">Event Information
+    <a routerLink="/about" class="btn btn-primary">Add Event</a>
   </h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Ville</th>
-        <th>Entreprise</th>
-        <th>Role</th>
-        <th>Action</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of this.users ">
-        <td>{{user.id}}</td>
-        <td>{{user.nom}}</td>
-        <td>{{user.prenom}}</td>
-        <td>{{user.ville}}</td>
-        <td>{{user.entreprise}}</td>
-        <td>{{user.role}}</td>
-        <td>
-          <div style="display: flex; gap: 10px;">
-              <button routerLink="/component/users/{{user.id}}" class="bi bi-pencil-square custom-button"></button>
-              <button routerLink="" class="bi bi-trash custom-button"></button>
-          </div>
-      </td>
-       
-        
-       
-
-
-
-
-      
-      
-      
-      </tr>     
-   
-    </tbody>
-  </table>
+  <div class="container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>description</th>
+          <th>Date de début</th>
+          <th>Date fin</th>
+          <th>ville</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of this.evenements ">
+          <td>{{event.id_event}}</td>
+          <td>{{event.nom}}</td>
+          <td>{{event.description}}</td>
+          <td>{{event.date}}</td>
+          <td>{{event.dateFin}}</td>
+          <td>{{event.ville}}</td>
+          
+          <td>
+            <div style="display: flex; gap: 10px;">
+                <button routerLink="/component/EventEdit/{{event.id_event}}" class="bi bi-pencil-square custom-button"></button>
+                <button routerLink="" class="bi bi-trash custom-button"></button>
+            </div>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
-
 
 <style>
 
@@ -182,4 +151,3 @@ body {
     }
 
 </style>
-

@@ -23,7 +23,7 @@ import { Approutes } from './app-routing.module';
 //import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
-import { LoaderComponent } from './component/loader/loader.component';
+import { LoaderComponent } from './component/EditStand/EditStand.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -41,10 +41,17 @@ import { EventTypeComponent } from './event-type/event-type.component';
 import { AddNotifComponent } from './add-notif/add-notif.component';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { AboutModule } from './component/Event/About.module';
+import { UserEventComponent } from './user-event/user-event.component';
 
 
 
 
+export const appConfig: ApplicationConfig = {
+  providers: [importProvidersFrom(TranslateModule.forRoot())],
+};
 
 
 
@@ -52,7 +59,6 @@ import { AdminReservationsComponent } from './admin-reservations/admin-reservati
   declarations: [
     AppComponent,
     SpinnerComponent,
-    LoaderComponent,
     HomeComponent,
     NavbarComponent,
     LayoutComponent,
@@ -65,6 +71,7 @@ import { AdminReservationsComponent } from './admin-reservations/admin-reservati
     AddNotifComponent,
     ReservationFormComponent,
     AdminReservationsComponent,
+    UserEventComponent,
     
   ],
   imports: [
@@ -84,18 +91,27 @@ import { AdminReservationsComponent } from './admin-reservations/admin-reservati
     ScheduleModule, RecurrenceEditorModule,
     FullCalendarModule ,
     FlatpickrModule.forRoot(),
+    LoaderComponent,
+    AboutModule
+
+    
   ],
   providers: [
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,
       
+      
      
     },
-    [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService]
+    [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService],
+    
   ],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
 
 

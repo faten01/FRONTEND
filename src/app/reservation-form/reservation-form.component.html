@@ -1,18 +1,46 @@
-<div class="inputForm">
-    <div style="text-align: center;">
-      Name *: <input type="text" id="Username" required>
-      Number of Seats *: <input type="number" id="Numseats" required>
-      <br/><br/>
-      <button (click)="takeData()">Start Selecting</button>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/home">EXPO</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/reservation">Stand</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Event</a></li>
+            <li class="nav-item"><a class="nav-link" href="/userspace">Calendar</a></li>
+            
+            
+        </ul>
     </div>
-  </div>
-  
+</nav>
+</header>
+
+ <body>
+  <div class="main-content">
   <div class="seatStructure">
     <div style="text-align: center;">
         <table id="seatsBlock">
             <tr>
-                <td colspan="5"><div class="screen">Expo plan</div></td>
+                <td colspan="5"><div class="screen">Expo plan</div>
+                  <tr>
+                  <div class="search-container">
+
+                  <input type="text"class="bi bi-search"  placeholder="Search stands..." [(ngModel)]="searchText" class="search-input" />
+                  <button class="search-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+              </div>
             </tr>
+
+
+                </td>
+            </tr>
+            <tr *ngIf="filteredStands().length === 0">
+              <td colspan="5" class="text-center">No stands found</td>
+            </tr>
+            <div *ngFor="let stand of filteredStands(); let i = index"></div>
+
             <!-- Your table rows for seat selection -->
             <ng-container *ngFor="let stand of stands; let i = index">
                 <!-- Start a new row after every 5 stands -->
@@ -21,13 +49,14 @@
                 </ng-container>
                 <td>
                     <!-- Display stand photo -->
-                    <div>
+                    <div class="photo">
                         <img [src]="stand.photo" alt="Uploaded Image" (click)="openModal(stand.photo)">
                     </div>
                     <!-- Button to display stand data -->
                     <div>
                         <button type="button" class="btn btn-outline-info" (click)="showStandData(stand)">Show Stand Data</button>
                     </div>
+                    
                     <!-- Hidden div containing stand information -->
                     <div style="display: none;">
                         <p hidden>id: {{ stand.id_stand }}</p>
@@ -38,20 +67,19 @@
                         <p>Prix: {{ stand.prix }} TND</p>
                         <p>Etat: {{ stand.etat }}</p>
                     </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-info" (click)="select(stand.id_stand)">Select</button>
+
+                    </div>
                 </td>
+                
                 <!-- End a row after every 5 stands -->
                 <ng-container *ngIf="(i + 1) % 5 === 0 || i === stands.length - 1">
                     
                 </ng-container>
             </ng-container>
-            <tr>
-                <td colspan="5" rowspan="20">
-                    <div class="smallBox greenBox">Selected Seat</div> <br/>
-                    <div class="smallBox redBox">Reserved Seat</div><br/>
-                    <div class="smallBox emptyBox">Empty Seat</div><br/>
-                </td>
-            </tr>
-        </table>
+            
+       </table>
     </div>
 </div>
   
@@ -60,26 +88,39 @@
     <span class="close"  (click)="closeModal()">&times;</span>
     <img class="modal-content" id="modalImg">
   </div>
+  <div id="standDataModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeStandDataModal()">&times;</span>
+      <div id="standDataContainer"></div>
+    </div>
+  </div>
   
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="submitReservation()">
     <div>
-      <label for="event_id">Event ID:</label>
-      <input type="text" id="event_id" [(ngModel)]="model.event_id" name="event_id">
+      <label hidden for="event_id">Event ID:</label>
+      <input hidden type="text" id="event_id" [(ngModel)]="model.event_id" name="event_id">
     </div>
     <div>
-      <label for="user_id">User ID:</label>
-      <input type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
+      <label hidden for="user_id">User ID:</label>
+      <input hidden type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
     </div>
+    
     <div>
         <div class="row center">
             <h1>{{model.stand_id}}</h1>
         </div>
-        <label for="stand_id">stand ID:</label>
-        <input type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
+        <label hidden for="stand_id">stand ID:</label>
+        <input hidden type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
       </div>
       <input type="hidden" name="user_id" [value]="userId">
+      <input type="hidden" name="stand_id" [value]="selectedStandId">
      
-    <button type="submit">Submit Reservation</button>
+    <button class="btn btn-outline-info" type="submit">Submit Reservation</button>
   </form>
+</div>
+</body>
+<footer>
+<app-footer></app-footer></footer>
+
 
   

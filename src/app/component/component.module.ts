@@ -5,12 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsRoutes } from './component.routing';
-import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
+import { NgbdpaginationBasicComponent } from './StandList/StandList.component';
 import { NgbdAlertBasicComponent } from './stand/alert.component';
-import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
+import { NgbdDropdownBasicComponent } from './EventList/EventList.component';
 import { NgbdnavBasicComponent } from './userList/nav.component';
 import { NgbdButtonsComponent } from './user/buttons.component';
-import { CardsComponent } from './card/card.component';
+import { CardsComponent } from './EventEdit/EventEdit.component';
 import { TableComponent } from "./table/table.component";
 
 @NgModule({

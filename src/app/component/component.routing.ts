@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
-import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
+import { NgbdpaginationBasicComponent } from './StandList/StandList.component';
 import { NgbdAlertBasicComponent } from './stand/alert.component';
 
-import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
+import { NgbdDropdownBasicComponent } from './EventList/EventList.component';
 import { NgbdnavBasicComponent } from './userList/nav.component';
 import { BadgeComponent } from './userEdit/badge.component';
 import { NgbdButtonsComponent } from './user/buttons.component';
-import { CardsComponent } from './card/card.component';
+import { CardsComponent } from './EventEdit/EventEdit.component';
 import { TableComponent } from './table/table.component';
+import { LoaderComponent } from './EditStand/EditStand.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -19,15 +20,15 @@ export const ComponentsRoutes: Routes = [
 				component: TableComponent
 			},
 			{
-				path: 'card',
+				path: 'EventEdit/:_id',
 				component: CardsComponent
 			},
 			{
-				path: 'pagination',
+				path: 'StandList',
 				component: NgbdpaginationBasicComponent
 			},
 			{
-				path: 'users/:id',
+				path: 'users/:_id',
 				component: BadgeComponent
 			},
 			{
@@ -35,7 +36,7 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdAlertBasicComponent
 			},
 			{
-				path: 'dropdown',
+				path: 'EventList',
 				component: NgbdDropdownBasicComponent
 			},
 			{
@@ -45,7 +46,12 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'buttons',
 				component: NgbdButtonsComponent
-			}
+			},
+
+			{
+				path: 'EditStand/:_id',
+				component: LoaderComponent
+			},
 		]
 	}
 ];

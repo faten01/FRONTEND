@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbNavModule, NgbNavChangeEvent, NgbDropdownModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor, NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonsService, UserResponse } from 'src/app/services/buttons.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class NgbdnavBasicComponent {
 
 	
-	constructor (private buttonsService: ButtonsService ){
+	constructor (private buttonsService: ButtonsService, private router: Router ){
 
 
 
@@ -35,6 +35,8 @@ export class NgbdnavBasicComponent {
 			this.users = res;
 		});
 	}
+
+	
 
 
 }

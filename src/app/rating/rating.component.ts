@@ -25,4 +25,8 @@ export class RatingComponent implements OnInit {
       this.token = localStorage.getItem('token');
       this.user = this.login.customJwtDecode(this.token);
     }
+
+
+
+    
 }

@@ -13,9 +13,10 @@ export class ReservationFormComponent implements OnInit {
 
 
 
+
+  searchText!: string ;
+
   isImageEnlarged: boolean = false;
-
-
   stands: any[] = [];
   model: any = {};
   token:any;
@@ -27,6 +28,7 @@ export class ReservationFormComponent implements OnInit {
   photos: string[] = [];
   user!:any
   userId: string | null = null;
+  selectedStandId: string | null = null;
  //stand: any;
 
   constructor(private reservationService: ReservationsService,private route: ActivatedRoute, private router: Router, private http: HttpClient,
@@ -40,7 +42,26 @@ export class ReservationFormComponent implements OnInit {
     });
 
 }
+submitReservation(): void {
+  this.model.user_id = this.userId;
+  if (!this.selectedStandId || !this.userId) {
+    console.error('Cannot submit reservation: Stand ID or User ID is missing.');
+    return;
+  }
 
+  // Create reservation data including both stand ID and user ID
+  const reservationData = {
+    stand_id: this.selectedStandId,
+    user_id: this.userId
+  };
+
+  this.reservationService.createReservation(reservationData).subscribe({
+    next: (response) => console.log('Reservation requested:', response),
+    error: (error) => console.error('Error creating reservation:', error)
+  });
+
+
+}
 showStandData(stand: any): void {
   // Accessing stand data
   const standId = stand.id_stand;
@@ -52,18 +73,33 @@ showStandData(stand: any): void {
   const standEtat = stand.etat;
 
   // Constructing stand data string
-  const standDataString = `
-    Stand ID: ${standId}
-    Numéro: ${standNumero}
-    Superficie: ${standSuperficie} 
-    Longeur: ${standLongeur} M
-    Largeur: ${standLargeur} M
-    Prix: ${standPrix} TND
-    État: ${standEtat}
+  const standDataHtml = `
+    <p hidden><strong>Stand ID:</strong> ${standId}</p>
+    <p><strong>Numéro:</strong> ${standNumero}</p>
+    <p><strong>Superficie:</strong> ${standSuperficie} M²</p>
+    <p><strong>Longeur:</strong> ${standLongeur} M</p>
+    <p><strong>Largeur:</strong> ${standLargeur} M</p>
+    <p><strong>Prix:</strong> ${standPrix} TND</p>
+    <p><strong>État:</strong> ${standEtat}</p>
   `;
 
-  // Displaying stand data (you can customize this part according to your UI)
-  alert(standDataString);
+  // Inserting stand data into the modal
+  const standDataContainer = document.getElementById('standDataContainer');
+  if (standDataContainer) {
+    standDataContainer.innerHTML = standDataHtml;
+  }
+
+  // Displaying the modal
+  const modal = document.getElementById('standDataModal');
+  if (modal) {
+    modal.style.display = 'block';
+  }
+}
+closeStandDataModal(): void {
+  const modal = document.getElementById('standDataModal');
+  if (modal) {
+    modal.style.display = 'none';
+  }
 }
 
 
@@ -207,6 +243,23 @@ getID(): void {
   this.userId = tokenData.id; // Store user ID
 
 }
+
+select(standId: string): void {
+  this.selectedStandId = standId; 
+}
+
+
+
+
+filteredStands(): any[] {
+  if (!this.searchText) {
+    return this.stands;
+  }
+  return this.stands.filter(stand => {
+    return stand.numero.toString().includes(this.searchText);
+  });
+}
+
 
 }
 

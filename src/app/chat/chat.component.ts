@@ -3,6 +3,8 @@ import { UserspaceService } from '../services/userspace.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { LoginService } from '../services/login.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { StreamAutocompleteTextareaModule, StreamChatModule } from 'stream-chat-angular';
 
 @Component({
   selector: 'app-chat',

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './component/Event/about.component';
+import { AboutComponent } from './component/Event/Event.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -71,7 +71,7 @@ export const Approutes: Routes = [
   {
     path: 'about',
     component: FullComponent,
-    loadChildren: () => import('./component/Event/about.module').then(m => m.AboutModule)
+    loadChildren: () => import('./component/Event/About.module').then(m => m.AboutModule)
   },
   {
     path: 'register',

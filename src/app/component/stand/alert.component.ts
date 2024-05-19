@@ -157,7 +157,7 @@ export class NgbdAlertBasicComponent  {
       prix :this.prix,
       successMessage: this.successMessage,
       errorMessage: this.errorMessage,
-      photo: this.photos.join(','),   
+      photo: this.photos.join(''),   
     } 
 
    

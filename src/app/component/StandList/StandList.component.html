@@ -3,77 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Information</title>
-    <a routerLink="/component/buttons" class="btn btn-success" >add user</a>
-    
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+  <title>User List</title>
 </head>
 <body>
-  
   <h2 style="display: flex; justify-content: space-between;">User Information
-    <a routerLink="/component/buttons" class="btn btn-primary">Add User</a>
+    <a routerLink="/component/alert" class="btn btn-primary">Add Stand</a>
   </h2>
+  <div class="container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Numero</th>
+          <th>Superficie</th>
+          <th>Longeur</th>
+          <th>Largeur</th>
+          <th>Prix</th>
+          <th>Etat</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stand of this.stands ">
+          <td>{{stand.id_stand}}</td>
+          <td>{{stand.numero}}</td>
+          <td>{{stand.superficie}}m</td>
+          <td>{{stand.longeur}}m</td>
+          <td>{{stand.largeur}}m</td>
+          <td>{{stand.prix}}TND</td>
+          <td>{{stand.etat}}</td>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Id</th>
-
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Ville</th>
-        <th>Entreprise</th>
-        <th>Role</th>
-        <th>Action</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of this.users ">
-        <td>{{user.id}}</td>
-        <td>{{user.nom}}</td>
-        <td>{{user.prenom}}</td>
-        <td>{{user.ville}}</td>
-        <td>{{user.entreprise}}</td>
-        <td>{{user.role}}</td>
-        <td>
-          <div style="display: flex; gap: 10px;">
-              <button routerLink="/component/users/{{user.id}}" class="bi bi-pencil-square custom-button"></button>
-              <button routerLink="" class="bi bi-trash custom-button"></button>
-          </div>
-      </td>
-       
-        
-       
-
-
-
-
-      
-      
-      
-      </tr>     
-   
-    </tbody>
-  </table>
+          
+          <td>
+            <div style="display: flex; gap: 10px;">
+                <button routerLink="/component/EditStand/{{stand.id_stand}}" class="bi bi-pencil-square custom-button"></button>
+                <button routerLink="" class="bi bi-trash custom-button"></button>
+            </div>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
-
 
 <style>
 
@@ -182,4 +154,3 @@ body {
     }
 
 </style>
-

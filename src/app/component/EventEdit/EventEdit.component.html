@@ -4,24 +4,26 @@
         <div class="row d-flex align-items-center justify-content-center">
         
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form (ngSubmit)="updateUser(data)" >
+            <form (ngSubmit)="updateEvent(data)" >
               <h1>Edit un utilisateur</h1><br>
                 <div>
                   <div class="form-outline mb-4">
-                    <input hidden type="text" id="id" [(ngModel)]="data.id" name="id" class="form-control form-control-lg" />
+                    <input hidden type="text" id="id" [(ngModel)]="data.id_event" name="id" class="form-control form-control-lg" />
                     <label hidden class="form-label" for="id" >id</label>
                   </div>
               
               <!-- Email input -->
               
-                <div class="form-outline mb-4">
-                  <input type="text" id="prenom" [(ngModel)]="data.prenom" name="prenom" class="form-control form-control-lg" />
-                  <label class="form-label" for="prenom" >Prénom</label>
-                </div>
+                
             
                 <div class="form-outline mb-4">
                   <input type="text" id="nom" name="nom" [(ngModel)]="data.nom"  class="form-control form-control-lg" />
                   <label class="form-label" for="nom" >Nom</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="description" [(ngModel)]="data.description" name="description" class="form-control form-control-lg" />
+                  <label class="form-label" for="description" >Description</label>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -30,17 +32,23 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="entreprise" name="entreprise" [(ngModel)]="data.entreprise" class="form-control form-control-lg" />
-                  <label class="form-label" for="entreprise"  >Entreprise</label>
+                  <input type="date" id="date" name="date" [(ngModel)]="data.date" class="form-control form-control-lg" />
+                  <label class="form-label" for="date">Date de début</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="date" id="dateFin" name="dateFin" [(ngModel)]="data.dateFin" class="form-control form-control-lg" />
+                  <label class="form-label" for="dateFin">Date Fin</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="date" id="dateFin" name="dateFin" [(ngModel)]="data.dateFin" class="form-control form-control-lg" />
+                  <label class="form-label" for="dateFin">Date Fin</label>
                 </div>
 
             
 
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="role" [(ngModel)]="data.role" name="role" class="form-control form-control-lg" />
-                  <label class="form-label" for="role"  >Role</label>
-                </div>
 
               <!--<label class="form-label" for="role" [(ngModel)]="role" >Role:</label><br><br>
 

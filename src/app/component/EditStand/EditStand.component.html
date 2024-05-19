@@ -4,43 +4,56 @@
         <div class="row d-flex align-items-center justify-content-center">
         
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form (ngSubmit)="updateUser(data)" >
-              <h1>Edit un utilisateur</h1><br>
+            <form (ngSubmit)="updateStand(data)" >
+              <h1>Edit un Stand</h1><br>
                 <div>
                   <div class="form-outline mb-4">
-                    <input hidden type="text" id="id" [(ngModel)]="data.id" name="id" class="form-control form-control-lg" />
+                    <input hidden type="text" id="id" [(ngModel)]="data.id_stand" name="id" class="form-control form-control-lg" />
                     <label hidden class="form-label" for="id" >id</label>
                   </div>
               
               <!-- Email input -->
               
-                <div class="form-outline mb-4">
-                  <input type="text" id="prenom" [(ngModel)]="data.prenom" name="prenom" class="form-control form-control-lg" />
-                  <label class="form-label" for="prenom" >Prénom</label>
-                </div>
+                
             
                 <div class="form-outline mb-4">
-                  <input type="text" id="nom" name="nom" [(ngModel)]="data.nom"  class="form-control form-control-lg" />
-                  <label class="form-label" for="nom" >Nom</label>
+                  <input type="number" id="numero" name="numero" [(ngModel)]="data.Numero"  class="form-control form-control-lg" />
+                  <label class="form-label" for="numero" >Numero</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="ville" name="ville"  [(ngModel)]="data.ville" class="form-control form-control-lg" />
-                  <label class="form-label" for="ville" >ville</label>
+                  <input type="number" id="superficie" [(ngModel)]="data.superficie" name="superficie" class="form-control form-control-lg" />
+                  <label class="form-label" for="superficie" >Superficie</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="entreprise" name="entreprise" [(ngModel)]="data.entreprise" class="form-control form-control-lg" />
-                  <label class="form-label" for="entreprise"  >Entreprise</label>
+                  <input type="number" id="longeur" name="longeur"  [(ngModel)]="data.longeur" class="form-control form-control-lg" />
+                  <label class="form-label" for="longeur" >Longeur</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="number" id="largeur" name="largeur" [(ngModel)]="data.largeur" class="form-control form-control-lg" />
+                  <label class="form-label" for="largeur">Largeur</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="number" id="prix" name="prix" [(ngModel)]="data.prix" class="form-control form-control-lg" />
+                  <label class="form-label" for="prix">Prix</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  
+                
+                <select name="etat" id="etat"  [(ngModel)]="data.etat" class="form-control form-control-lg">
+                  <option value="disponible">Disponible</option>
+                  <option value="non disponible">Non disponible</option>
+                  <option value="reservee">Reservée</option>
+                  </select>
                 </div>
 
             
 
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="role" [(ngModel)]="data.role" name="role" class="form-control form-control-lg" />
-                  <label class="form-label" for="role"  >Role</label>
-                </div>
 
               <!--<label class="form-label" for="role" [(ngModel)]="role" >Role:</label><br><br>
 

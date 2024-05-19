@@ -1,144 +1,138 @@
 /* CSS for Expo Fair Plan */
 
 /* Global Styles */
+/* Add this CSS to your styles.css or inside a <style> tag in your HTML */
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  /* Input Form Styles */
-  .inputForm {
-    margin-top: 20px;
-  }
-  
-  .inputForm input[type="text"],
-  .inputForm input[type="number"] {
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .inputForm button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .inputForm button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Seat Structure Styles */
-  .seatStructure {
-    margin-top: 20px;
-  }
-  
-  .seatStructure table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .seatStructure table td,
-  .seatStructure table th {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .seatStructure table .screen {
-    font-weight: bold;
-  }
-  
-  .seatStructure table .smallBox {
-    display: inline-block;
-    width: 120px;
-    height: 30px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    line-height: 30px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .seatStructure table .greenBox {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .seatStructure table .redBox {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .seatStructure table .emptyBox {
-    background-color: #f8f9fa;
-  }
-  
-  .seatStructure table .seatGap {
-    width: 20px;
-  }
-  
-  .seatStructure table .seatVGap {
-    height: 20px;
-  }
-  
-  /* Displayer Boxes Styles */
-  .displayerBoxes {
-    margin-top: 20px;
-  }
-  
-  .displayerBoxes table {
-    width: 100%;
-  }
-  
-  .displayerBoxes table th,
-  .displayerBoxes table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .displayerBoxes textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
-  }
-  
-  /* Total Styles */
-  .total {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .total span {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .total button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .total button:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Screen */
+.screen {
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+
+}
+
+/* Seats Block */
+#seatsBlock {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#seatsBlock td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+#seatsBlock img {
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#photo img {
+  width: 3000px;
+  height: 1000px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#seatsBlock img:hover {
+  transform: scale(1.1);
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: Montserrat;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 80%;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Form */
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+ input[type="text"] {
+  background-color: #ffffff;
+  border-color: rgb(255, 2, 107);
+
+}
+
   .success {
     background-color: #28a745 !important;
   }
@@ -183,20 +177,113 @@ body {
   }
   
 
+  footer {
+    bottom: 1px;
+    width: 100%;
+    background-color: #f8f9fa; /* adjust the background color as needed */
+    padding: 1px 0;
+    text-align: center;
+  }
 
 
 
 
 
 
+  .navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+    height: 70px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 10rem; /* Adjust the size of the logo */
+    margin-left: 40px; /* Adjust margin as needed */
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+   color: #fff;
+}
+
+.navbar a {
+    color: #fffcfc;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    font-family: Stencil Std, fantasy;
+    margin-left: 1.5rem;
+
+
+}
+
+.navbar a:hover {
+    color: #f6066e;
+}
+
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ff4500;
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 50px 0 0 50px;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.search-input::placeholder {
+  color: #ccc;
+}
+
+.search-button {
+  background-color: #ff007b;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.search-button:focus {
+  outline: none;
+}
 
 
 
 
 
 
-  
- 
-  
   
   

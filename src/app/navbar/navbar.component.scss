@@ -17,8 +17,8 @@
 }
 
 .logo {
-    font-size: 2rem; /* Adjust the size of the logo */
-    margin-left: 20px; /* Adjust margin as needed */
+    font-size: 10rem; /* Adjust the size of the logo */
+    margin-left: 40px; /* Adjust margin as needed */
 }
 
 .menu-items {
@@ -29,19 +29,35 @@
     list-style: none;
     margin-left: 1.5rem;
     font-size: 1.3rem;
+   color: #fff;
 }
 
 .navbar a {
-    color: #444;
-    text-decoration: none;
+    color: #fffcfc;
     font-weight: 500;
     transition: color 0.3s ease-in-out;
+    font-family: Stencil Std, fantasy;
+    margin-left: 1.5rem;
+
+
 }
 
 .navbar a:hover {
-    color: #117964;
+    color: #f6066e;
 }
 
 .nav-button {
     margin-right: 20px; /* Adjust the spacing as needed */
 }
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .signup-btn, .signin-btn {
+    background-color: #ff4081;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;}

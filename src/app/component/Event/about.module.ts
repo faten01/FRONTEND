@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
 import { NgFor, NgIf } from '@angular/common';
 
-import { AboutComponent } from "./about.component";
+import { AboutComponent } from "./Event.component";
 import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
 
 const routes: Routes = [

@@ -75,8 +75,8 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/about',
-    title: 'About',
+    path: '/Event',
+    title: 'Event',
     icon: 'bi bi-people',
     class: '',
     extralink: false,

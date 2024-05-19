@@ -1,5 +1,6 @@
 import { NgFor, NgIf } from "@angular/common";
-import { Component } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ButtonsService } from "src/app/services/buttons.service";
@@ -10,7 +11,7 @@ import { ButtonsService } from "src/app/services/buttons.service";
     FormsModule, ReactiveFormsModule , NgFor, NgIf
   ]
 })
-export class BadgeComponent {
+export class BadgeComponent implements OnInit {
 
   user!:any
   userId!:any
@@ -24,10 +25,25 @@ export class BadgeComponent {
   successMessage !: string 
   errorMessage !: string 
   isLoading:boolean=false;
+  data!:any
 
-  constructor( private route : ActivatedRoute, private buttonsService :ButtonsService,private router: Router) { }
+  public form = {
+    id: null,
+    nom: null,
+    prenom: null,
+    ville: null,
+    entreprise: null,
+    role: null,
+    telephone: null,
 
-  
+    token: null
+  }
+
+  constructor( private route : ActivatedRoute, private buttonsService :ButtonsService,private router: Router, private httpclient:HttpClient) { }
+
+  public message = ""
+  public alert = ""
+  _id: any
 
 
 
@@ -37,29 +53,34 @@ export class BadgeComponent {
 
   ngOnInit() {
     
-    this.userId=this.route.snapshot.paramMap.get('id');
+    this.userId=this.route.snapshot.paramMap.get('_id');
     alert(this.userId);
 
-    this.buttonsService.getUser(this.userId).subscribe((res:any) => {
-      console.log(res)
-      this.user =res.user
+    this.route.paramMap.subscribe(params => {
+      let userId = params.get("_id");
+      this._id = userId;
+      this.getUserById(this._id);
+      console.log(userId)
       
     });
+
+    this.getUserById(this.userId);
     
   }
+  getUserById(userId: string) {
+    this.httpclient.get(`http://127.0.0.1:8000/api/users/` + userId).subscribe(res => {
+      console.log(res)
+      this.data = res
+      this.form = this.data.user;
+    })
+  }
 
-  updateUser() {
-    var inputData={
-     nom: this.user.nom,
-     prenom: this.user.prenom,
-     ville: this.user.ville,
-     entreprise: this.user.entreprise,
-     role:this.user.role
-    }
+  updateUser(data:any) {
+    console.log(data);
     this.isLoading= true;
 
 
-    this.buttonsService.updateUser(inputData,this.userId).subscribe((res:any)=>{
+    this.httpclient.put(`http://127.0.0.1:8000/api/users/`+data.id,data).subscribe((res:any)=>{
      
 
         console.log(res);
