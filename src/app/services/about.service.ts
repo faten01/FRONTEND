@@ -22,6 +22,12 @@ UpdateEvent(formData:any,eventId:any){
 
   }
 
+  getEventbyId(eventId:any){
+    return this.httpClient.get<any[]>(`http://127.0.0.1:8000/api/evenements/${eventId}`);
+  
+
+  }
+
 
   getStands() {
     return this.httpClient.get<any[]>('http://127.0.0.1:8000/api/stands');

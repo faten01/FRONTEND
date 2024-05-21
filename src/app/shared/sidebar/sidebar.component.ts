@@ -23,7 +23,9 @@ export class SidebarComponent implements OnInit {
       { path: '/dashboard', title: 'Dashboard', icon: 'bi bi-graph-up', class: '', extralink: false },
       { path: '/component/StandList', title: 'Stand', icon: 'bi bi-plus-circle', class: 'bi bi-plus-circle', extralink: false },
       { path: '/component/nav', title: 'Users', icon: 'bi bi-people', class: '', extralink: false },
-      { path: '/component/EventList', title: 'Events', icon: 'bi bi-calendar-event', class: '', extralink: false }
+      { path: '/component/EventList', title: 'Events', icon: 'bi bi-calendar-event', class: '', extralink: false },
+      { path: '/adminreserv', title: 'Reservations', icon: 'bi bi-file-check', class: '', extralink: false }
+
       // Add or update more items as needed
     ];
   }

@@ -1,17 +1,32 @@
 <header>
 
 
-    <app-navigation></app-navigation>
 </header>
 
 <body>
-<ul>
-    <li *ngFor="let reservation of reservations">
-      {{ reservation.user_id }} - {{ reservation.event_id }} - Status: {{ reservation.acceptation }}
-      <button (click)="updateStatus(reservation.id, 'approved')">Approve</button>
-      <button (click)="updateStatus(reservation.id, 'rejected')">Reject</button>
-    </li>
-  </ul>
+  <div class="reservation-container">
+    <table class="reservation-table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Event ID</th>
+          <th>Stand ID</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations">
+          <td>{{ reservation.user_id }}</td>
+          <td>{{ reservation.event_id }}</td>
+          <td>{{ reservation.stand_id }}</td>
+          <td>{{ reservation.status }}</td>
+          <td>
+            <button class="bi bi-check-circle custom-button" (click)="updateStatus(reservation.id, 'approved')"></button>
+            <button class="bi bi-trash custom-button" (click)="updateStatus(reservation.id, 'rejected')"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
-
-  

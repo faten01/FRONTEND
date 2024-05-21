@@ -45,6 +45,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { AboutModule } from './component/Event/About.module';
 import { UserEventComponent } from './user-event/user-event.component';
+import { EventRateComponent } from './event-rate/event-rate.component';
 
 
 
@@ -72,6 +73,7 @@ export const appConfig: ApplicationConfig = {
     ReservationFormComponent,
     AdminReservationsComponent,
     UserEventComponent,
+    EventRateComponent,
     
   ],
   imports: [

@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.reservation-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.reservation-table thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.reservation-table th, .reservation-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.reservation-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.reservation-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.reservation-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.reservation-table .btn-approve, .reservation-table .btn-reject {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 5px;
+}
+
+.reservation-table .btn-approve {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.reservation-table .btn-approve:hover {
+    background-color: #218838;
+}
+
+.reservation-table .btn-reject {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.reservation-table .btn-reject:hover {
+    background-color: #c82333;
+}
+
+.custom-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.bi-check-circle.custom-button {
+    background-color: #45830b;
+}
+
+.bi-trash.custom-button {
+    background-color: #dc3545;
+}

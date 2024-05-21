@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  header {
+    background-color: #3e3b6a;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .signup-btn, .signin-btn {
+    background-color: #ff4081;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    background-color: #ffffff;
+    font-family: Montserrat ;
+    font-weight: bold;
+
+
+  }
+  
+  .event-container {
+    background-color: #3e497a;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  .event-image {
+    width: 60%;
+    padding-right: 20px;
+  }
+  
+  .event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  h1{
+    font-weight: bold;
+    font-family: Montserrat ;
+    color: #ffffff;
+    font-size: 50px;
+
+  }
+  
+  .event-details {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+  }
+  
+  .event-details h1 {
+    margin: 0 0 20px;
+  }
+  
+  .rating {
+    margin-bottom: 20px;
+  }
+  
+  .rating span {
+    font-size: 1em;
+    margin-right: 10px;
+    font-family: Montserrat ;
+    font-weight: bold;
+    color: #fd0779;
+
+  }
+  
+  .stars {
+    font-size: 1.5em;
+    color: #ff4081;
+  }
+  
+  .review label {
+    font-size: 1em;
+    display: block;
+    margin-bottom: 10px;
+    font-family: Montserrat bold;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+  }
+  
+  .send-btn {
+    align-self: flex-end;
+    background-color: #ff4081;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+  }
+
+  
+
+  .rating {
+    border: none;
+   }
+   
+   .rating > input {
+    display: none;
+   }
+   .rating > label:before {
+    margin-right: 5px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+   }
+   
+   .rating > label {
+    color: #fff;
+    float: right;
+   }
+   
+   .rating > input:checked ~ label,
+   .rating:not(:checked) > label:hover,
+   .rating:not(:checked) > label:hover ~ label {
+    color: #d85d61;
+   }
+   .rating > input:checked + label:hover,
+   .rating > input:checked ~ label:hover,
+   .rating > label:hover ~ input:checked ~ label,
+   .rating > input:checked ~ label:hover ~ label {
+    color: #d85d61;
+   }
+   
+   .blue > input:checked ~ label,
+   .blue:not(:checked) > label:hover,
+   .blue:not(:checked) > label:hover ~ label {
+    color: #458997;
+   }
+   .blue > input:checked + label:hover,
+   .blue > input:checked ~ label:hover,
+   .blue > label:hover ~ input:checked ~ label,
+   .blue > input:checked ~ label:hover ~ label {
+    color: #458997;
+   }
+   
+   .purple > input:checked ~ label,
+   .purple:not(:checked) > label:hover,
+   .purple:not(:checked) > label:hover ~ label {
+    color: #a76287;
+   }
+   .purple > input:checked + label:hover,
+   .purple > input:checked ~ label:hover,
+   .purple > label:hover ~ input:checked ~ label,
+   .purple > input:checked ~ label:hover ~ label {
+    color: #a76287;
+   }
+   
+   .yellow > input:checked ~ label,
+   .yellow:not(:checked) > label:hover,
+   .yellow:not(:checked) > label:hover ~ label {
+    color: #ffad58;
+   }
+   .yellow > input:checked + label:hover,
+   .yellow > input:checked ~ label:hover,
+   .yellow > label:hover ~ input:checked ~ label,
+   .yellow > input:checked ~ label:hover ~ label {
+    color: #ffad58;
+   }
+   
+   .dark-purp > input:checked ~ label,
+   .dark-purp:not(:checked) > label:hover,
+   .dark-purp:not(:checked) > label:hover ~ label {
+    color: #905587;
+   }
+   .dark-purp > input:checked + label:hover,
+   .dark-purp > input:checked ~ label:hover,
+   .dark-purp > label:hover ~ input:checked ~ label,
+   .dark-purp > input:checked ~ label:hover ~ label {
+    color: #905587;
+   }

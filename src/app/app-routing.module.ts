@@ -134,6 +134,8 @@ export const Approutes: Routes = [
 
   {
     path: 'adminreserv',
+    component: FullComponent,
+
 
     loadChildren: () => import('./admin-reservations/admin-reservations.module').then(m => m.AdminReservationsModule)
   },
@@ -143,6 +145,18 @@ export const Approutes: Routes = [
 
     loadChildren: () => import('./reservation-form/reservation-form.module').then(m => m.ReservationFormModule)
   },
+  {
+    path: 'events',
+
+    loadChildren: () => import('./user-event/user-event.module').then(m => m.UserEventModule)
+  },
+
+  {
+    path: 'eventrate/:id',
+
+    loadChildren: () => import('./event-rate/event-rate.module').then(m => m.EventRateModule)
+  },
+
   {
     path: 'home',
 

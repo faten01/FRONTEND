@@ -1,1 +1,147 @@
-<p>user-event works!</p>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/home">EXPO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/reservation">Stand</a></li>
+          <li class="nav-item"><a class="nav-link" href="/events">Event</a></li>
+          <li class="nav-item"><a class="nav-link" href="/userspace">Calendar</a></li>
+          <li class="nav-item " ngbDropdown placement="bottom-end">
+            <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic"  id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="assets/images/users/user1.jpg" alt="user" class="rounded-circle" width="31" />
+              <span class="ms-2">{{ user.nom }} {{ user.prenom }}</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="javascript:void(0)">My Profile</a>
+              <a class="dropdown-item" href="javascript:void(0)">My Balance</a>
+              <a class="dropdown-item" href="javascript:void(0)">Inbox</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void(0)">Account Setting</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+   <body>
+    <div class="main-content">
+    <div class="seatStructure">
+      <div style="text-align: center;">
+          <table id="seatsBlock">
+              <tr>
+                  <td colspan="5"><div class="screen">Events</div>
+                    <tr>
+                    <div class="search-container">
+  
+                    <input type="text"class="bi bi-search"  placeholder="Search events..." [(ngModel)]="searchText" class="search-input" />
+                    <button class="search-button">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </button>
+                </div>
+              </tr>
+  
+  
+                  </td>
+              </tr>
+              <tr *ngIf="filteredEvents().length === 0">
+                <td colspan="5" class="text-center">No Events found</td>
+              </tr>
+              <div *ngFor="let stand of filteredEvents(); let i = index"></div>
+  
+              <!-- Your table rows for seat selection -->
+              <ng-container *ngFor="let event of events; let i = index">
+                  <!-- Start a new row after every 5 stands -->
+                  <ng-container *ngIf="i % 2 === 0">
+                      <tr>
+                  </ng-container>
+                  <td>
+                      <!-- Display stand photo -->
+                      <div class="photo">
+                          <img [src]="event.affiche" alt="Uploaded Image" (click)="openModal(event.affiche)">
+                      </div>
+                      <!-- Button to display stand data -->
+                      <div>
+                          <button type="button" class="btn btn-outline-info" (click)="showStandData(event)">Show Event info</button>
+                      </div>
+                      
+                      <!-- Hidden div containing stand information -->
+                      <div style="display: none;">
+                          <p hidden>id: {{ event.id_event }}</p>
+                          <p>Nom: {{ event.nom }}</p>
+                          <p>Ville: {{ event.ville }}</p>
+                          <p>Date de début: {{ event.date }}</p>
+                          <p>Date Fin: {{ event.dateFin }}</p>
+                        
+                      </div>
+                      <div >
+                          <button type="button" class="btn btn-outline-info" (click)="select(event.id_event)">Select</button>
+  
+                      </div>
+                      <div>
+                        <button type="button" class="btn btn-outline-info"  [routerLink]="['/eventrate' , event.id_event]">Rate</button>
+
+                    </div>
+                
+
+                  </td>
+                  
+                  <!-- End a row after every 5 stands -->
+                  <ng-container *ngIf="(i + 1) % 5 === 0 || i === event.length - 1">
+                      
+                  </ng-container>
+              </ng-container>
+              
+         </table>
+      </div>
+  </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close"  (click)="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
+    <div id="standDataModal" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeStandDataModal()">&times;</span>
+        <div id="standDataContainer"></div>
+      </div>
+    </div>
+    
+  <form (ngSubmit)="submitReservation()">
+      <div>
+        <label hidden for="event_id">Event ID:</label>
+        <input hidden type="text" id="event_id" [(ngModel)]="model.event_id" name="event_id">
+      </div>
+      <div>
+        <label hidden for="user_id">User ID:</label>
+        <input hidden type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
+      </div>
+      
+      <div>
+          <div class="row center">
+              <h1>{{model.stand_id}}</h1>
+          </div>
+          <label hidden for="stand_id">stand ID:</label>
+          <input hidden type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
+        </div>
+        <input type="hidden" name="user_id" [value]="userId">
+        <input type="hidden" name="stand_id" [value]="selectedeventId">
+       
+      <button class="btn btn-outline-info" type="button" routerLink="/reservation">Select Event</button>
+    </form>
+  </div>
+  </body>
+  <footer>
+  <app-footer></app-footer></footer>
+  
+  
+    

@@ -5,7 +5,7 @@
         <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/reservation">Stand</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Event</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events">Event</a></li>
             <li class="nav-item"><a class="nav-link" href="/userspace">Calendar</a></li>
             
             
@@ -54,7 +54,7 @@
                     </div>
                     <!-- Button to display stand data -->
                     <div>
-                        <button type="button" class="btn btn-outline-info" (click)="showStandData(stand)">Show Stand Data</button>
+                        <button type="button" class="btn btn-outline-info" (click)="showStandData(stand)">Show Stand info</button>
                     </div>
                     
                     <!-- Hidden div containing stand information -->
@@ -104,16 +104,23 @@
       <label hidden for="user_id">User ID:</label>
       <input hidden type="text" id="user_id" [(ngModel)]="model.user_id" name="user_id">
     </div>
+    <input type="hidden" [(ngModel)]="model.event_id" name="event_id">
+
     
-    <div>
-        <div class="row center">
-            <h1>{{model.stand_id}}</h1>
-        </div>
+ 
         <label hidden for="stand_id">stand ID:</label>
         <input hidden type="text" id="stand_id" [(ngModel)]="model.stand_id" name="stand_id">
-      </div>
       <input type="hidden" name="user_id" [value]="userId">
       <input type="hidden" name="stand_id" [value]="selectedStandId">
+
+      <div *ngIf="successMessage" class="alert alert-success" role="alert">
+        {{ successMessage }}
+      </div>
+      <!-- Error message -->
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+
      
     <button class="btn btn-outline-info" type="submit">Submit Reservation</button>
   </form>
