@@ -3,6 +3,7 @@ import { ReservationsService } from '../services/reservations.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AboutService } from '../services/about.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-reservation-form',
@@ -19,16 +20,23 @@ export class ReservationFormComponent implements OnInit {
   selectedStandId: string | null = null;
   successMessage !: string 
   errorMessage !: string 
+  user: any
+  reservations: any[] = [];
+
 
   constructor(
     private reservationService: ReservationsService,
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
-    private getstand: AboutService
+    private getstand: AboutService,
+    private login: LoginService
   ) {}
 
   ngOnInit(): void {
+
+    this.token = localStorage.getItem('token');
+    this.user = this.login.customJwtDecode(this.token);
     this.getStands();
     this.getID();
 
@@ -39,6 +47,8 @@ export class ReservationFormComponent implements OnInit {
     this.reservationService.selectedStandId$.subscribe(standId => {
       this.model.stand_id = standId;
     });
+
+
   }
 
   getID(): void {
@@ -170,4 +180,12 @@ export class ReservationFormComponent implements OnInit {
       return stand.numero.toString().includes(this.searchText);
     });
   }
+
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+ 
+ 
 }

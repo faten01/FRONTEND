@@ -140,4 +140,11 @@ export class EventRateComponent implements OnInit {
     );
   }
 
+  
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
+
+
 }

@@ -165,142 +165,50 @@
       </div>
     </nav>
   </div>
-    <div class="event-slide">
-     <div class="book js-flickity" data-flickity-options='{ "wrapAround": true }'>
-      <div class="event-cell">
-       <div class="event-img">
-        <img src="https://cdn.leonardo.ai/users/619d0c79-5dff-4222-801a-23e483331e60/generations/7a88d739-96c7-4518-86c1-0b95f964239d/Default_an_expo_stands_2.jpg" alt="" class="event-photo">
-       </div>
-       <div class="event-content">
-        <div class="evet-title">BIG MAGIC</div>
-        <div class="event-author">by Elizabeth Gilbert</div>
-        <div class="rate">
-         <fieldset class="rating">
-          <input type="checkbox" id="star5" name="rating" value="5" />
-          <label class="full" for="star5"></label>
-          <input type="checkbox" id="star4" name="rating" value="4" />
-          <label class="full" for="star4"></label>
-          <input type="checkbox" id="star3" name="rating" value="3" />
-          <label class="full" for="star3"></label>
-          <input type="checkbox" id="star2" name="rating" value="2" />
-          <label class="full" for="star2"></label>
-          <input type="checkbox" id="star1" name="rating" value="1" />
-          <label class="full" for="star1"></label>
-         </fieldset>
-         <span class="event-voters">1.987 voters</span>
-        </div>
-        <div class="event-sum">Readers of all ages and walks of life have drawn inspiration and empowerment from Elizabeth Gilbert’s books for years. </div>
-        <div class="event-see">rate The Stand</div>
-       </div>
-      </div>
-      <div class="event-cell">
-       <div class="event-img">
-        <img src="https://cdn.leonardo.ai/users/619d0c79-5dff-4222-801a-23e483331e60/generations/7a88d739-96c7-4518-86c1-0b95f964239d/Default_an_expo_stands_3.jpg" alt="" class="event-photo">
-       </div>
-       <div class="event-content">
-        <div class="event-title">Ten Thousand Skies Above You</div>
-        <div class="event-author">by Claudia Gray</div>
-        <div class="rate">
-         <fieldset class="rating blue">
-          <input type="checkbox" id="star6" name="rating" value="5" />
-          <label class="full1" for="star6"></label>
-          <input type="checkbox" id="star7" name="rating" value="4" />
-          <label class="full1" for="star7"></label>
-          <input type="checkbox" id="star8" name="rating" value="3" />
-          <label class="full1" for="star8"></label>
-          <input type="checkbox" id="star9" name="rating" value="2" />
-          <label class="full1" for="star9"></label>
-          <input type="checkbox" id="star10" name="rating" value="1" />
-          <label class="full1" for="star10"></label>
-         </fieldset>
-         <span class="event-voters">1.987 voters</span>
-        </div>
-        <div class="event-sum">The hunt for each splinter of Paul's soul sends Marguerite racing through a war-torn San Francisco.</div>
-        <div class="event-see book-blue">rate The Stand</div>
-       </div>
-      </div>
-      <div class="event-cell">
-       <div class="event-img">
-        <img src="https://cdn.leonardo.ai/users/619d0c79-5dff-4222-801a-23e483331e60/generations/7a88d739-96c7-4518-86c1-0b95f964239d/Default_an_expo_stands_1.jpg" alt="" class="event-photo">
-       </div>
-       <div class="event-content">
-        <div class="event-title">A Tale For The Time Being</div>
-        <div class="event-author">by Ruth Ozeki</div>
-        <div class="rate">
-         <fieldset class="rating purple">
-          <input type="checkbox" id="star11" name="rating" value="5" />
-          <label class="full" for="star11"></label>
-          <input type="checkbox" id="star12" name="rating" value="4" />
-          <label class="full" for="star12"></label>
-          <input type="checkbox" id="star13" name="rating" value="3" />
-          <label class="full" for="star13"></label>
-          <input type="checkbox" id="star14" name="rating" value="2" />
-          <label class="full" for="star14"></label>
-          <input type="checkbox" id="star15" name="rating" value="1" />
-          <label class="full" for="star15"></label>
-         </fieldset>
-         <span class="event-voters">1.987 voters</span>
-        </div>
 
-        <div class="event-sum">In Tokyo, sixteen-year-old Nao has decided there’s only one escape from her aching loneliness and her classmates’ bullying.</div>
-        <div class="event-see book-pink">rate The Stand</div>
-       </div>
-      </div>
-      <div class="event-cell">
-       <div class="event-img">
-        <img src="https://cdn.leonardo.ai/users/619d0c79-5dff-4222-801a-23e483331e60/generations/a64c0ba1-6642-471c-a6de-c240d8c9bb09/Default_vertical_photo_an_expo_stand_2.jpg" alt="" class="event-photo">
-       </div>
-       <div class="event-content">
-        <div class="event-title">The Great Gatsby</div>
-        <div class="event-author">by F.Scott Fitzgerald</div>
-        <div class="rate">
-         <fieldset class="rating yellow">
-          <input type="checkbox" id="star16" name="rating" value="5" />
-          <label class="full" for="star16"></label>
-          <input type="checkbox" id="star17" name="rating" value="4" />
-          <label class="full" for="star17"></label>
-          <input type="checkbox" id="star18" name="rating" value="3" />
-          <label class="full" for="star18"></label>
-          <input type="checkbox" id="star19" name="rating" value="2" />
-          <label class="full" for="star19"></label>
-          <input type="checkbox" id="star20" name="rating" value="1" />
-          <label class="full" for="star20"></label>
-         </fieldset>
-         <span class="event-voters">1.987 voters</span>
+  <div class="container">
+    <ng-container *ngFor="let type of types; let i = index">
+     
+      <div class="event-slide">
+        <div class="book js-flickity" data-flickity-options='{ "wrapAround": true }'>
+          <div class="event-cell">
+            <div class="event-img">
+              <img [src]="type.photo" alt="Uploaded Image" class="event-photo">
+            </div>
+            <div class="event-content">
+              <div class="event-title">{{ type.type }}</div>
+              <div class="event-author">by Elizabeth Gilbert</div>
+              <div class="rate">
+                <fieldset class="rating">
+                  <input type="checkbox" id="star5-{{i}}" name="rating" value="5" />
+                  <label class="full" for="star5-{{i}}"></label>
+                  <input type="checkbox" id="star4-{{i}}" name="rating" value="4" />
+                  <label class="full" for="star4-{{i}}"></label>
+                  <input type="checkbox" id="star3-{{i}}" name="rating" value="3" />
+                  <label class="full" for="star3-{{i}}"></label>
+                  <input type="checkbox" id="star2-{{i}}" name="rating" value="2" />
+                  <label class="full" for="star2-{{i}}"></label>
+                  <input type="checkbox" id="star1-{{i}}" name="rating" value="1" />
+                  <label class="full" for="star1-{{i}}"></label>
+                </fieldset>
+                <span class="event-voters">1,987 voters</span>
+              </div>
+              <div class="event-sum">
+                Readers of all ages and walks of life have drawn inspiration and empowerment from Elizabeth Gilbert’s books for years.
+              </div>
+              <div class="event-see">Rate The Stand</div>
+            </div>
+          </div>
         </div>
-        <div class="event-sum">The Great Gatsby, F. Scott Fitzgerald’s third book, stands as the supreme achievement of his career.</div>
-        <div class="event-see book-yellow">rate The Stand</div>
-       </div>
       </div>
-      <div class="event-cell">
-       <div class="event-img">
-        <img src="https://cdn.leonardo.ai/users/619d0c79-5dff-4222-801a-23e483331e60/generations/a64c0ba1-6642-471c-a6de-c240d8c9bb09/Default_vertical_photo_an_expo_stand_3.jpg" alt="" class="event-photo">
-       </div>
-       <div class="event-content">
-        <div class="event-title">After You</div>
-        <div class="event-author">by Jojo Moyes</div>
-        <div class="rate">
-         <fieldset class="rating dark-purp">
-          <input type="checkbox" id="star21" name="rating" value="5" />
-          <label class="full" for="star21"></label>
-          <input type="checkbox" id="star22" name="rating" value="4" />
-          <label class="full" for="star22"></label>
-          <input type="checkbox" id="star23" name="rating" value="3" />
-          <label class="full" for="star23"></label>
-          <input type="checkbox" id="star24" name="rating" value="2" />
-          <label class="full" for="star24"></label>
-          <input type="checkbox" id="star25" name="rating" value="1" />
-          <label class="full" for="star25"></label>
-         </fieldset>
-         <span class="event-voters">1.987 voters</span>
-        </div>
-        <div class="event-sum">Louisa Clark is no longer just an ordinary girl living an ordinary life. After the transformative six months spent.</div>
-        <div class="event-see book-purple">rate The Stand</div>
-       </div>
-      </div>
-     </div>
-    </div>
+    </ng-container>
+  </div>
 </div>
+  
+  
+     
+    
+
    </body>
    <main style="margin-top: 58px;">
     <div class="container pt-4"></div>

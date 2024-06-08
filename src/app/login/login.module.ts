@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { NavbarModule } from '../navbar/navbar.module';
 
 const routes: Routes = [
@@ -24,7 +23,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
    
   ]
 })

@@ -41,4 +41,17 @@ export class NgbdDropdownBasicComponent {
 		});
 	}
 
+	deleteEvent (eventId: number): void {
+		this.eventService.deleteEvent(eventId).subscribe({
+		  next: (response) => {
+			console.log(response.message);
+			// Optionally update the user status in your UI
+		  },
+		  error: (error) => {
+			console.error('Error deactivating user:', error);
+			
+		  }
+		});
+	  }
+
 }

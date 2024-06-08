@@ -171,14 +171,21 @@
         <thead>
           <tr>
             <th>Request number</th>
+            <th>nom</th>
             <th>Status</th>
+            <th>date</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let reservation of filteredReservations   let i = index">
+            <tr *ngFor="let reservation of reservations   let i = index">
+
             <td>{{ i + 1 }}</td>
+            <td>{{ reservation.event.nom }}</td>      
             <td>Your reservation request is {{ reservation.status }}</td>
-            
+            <td>{{ reservation.created_at }}</td>
+
+
           </tr>
         </tbody>
       </table>

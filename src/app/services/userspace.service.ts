@@ -9,6 +9,7 @@ export interface Event {
   nom: string;
   date: Date;
   dateFin: Date;
+  ville:string
   // Add any other properties you need
 }
 
@@ -26,5 +27,15 @@ export class UserspaceService {
 
  getEvents():Observable<Event[]>{
     return this.httpClient.get<Event[]>(`http://127.0.0.1:8000/api/evenements`);
+  }
+
+
+  deleteType(typeId: number): Observable<any> {
+    return this.httpClient.delete(`http://127.0.0.1:8000/api/types/${typeId}`, {});
+  }
+
+  UpdateType(formData:any,typeId:any){
+    return this.httpClient.put(`http://127.0.0.1:8000/api/evenements/${typeId}`,formData);
+
   }
 }

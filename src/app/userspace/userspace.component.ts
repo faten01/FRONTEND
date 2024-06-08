@@ -71,6 +71,7 @@ export class UserspaceComponent implements OnInit    {
   dateFin!: string
   id!:number
   checkbox:boolean = false;
+  ville!:any
 
 
 
@@ -151,7 +152,8 @@ export class UserspaceComponent implements OnInit    {
       start: this.date,
       end: this.dateFin,
       title: this.nom,
-      color: { ...colors['red'] },
+      place:this.ville ,
+          color: { ...colors['red'] },
       actions: this.actions,
       allDay: true,
       resizable: {
@@ -206,26 +208,9 @@ export class UserspaceComponent implements OnInit    {
     this.modal.open(this.modalContent, { size: 'lg' });
   }
 
-  addEvent(): void {
-    this.events = [
-      ...this.events,
-      {
-        title: 'New event',
-        start: startOfDay(new Date()),
-        end: endOfDay(new Date()),
-        color: colors['red'],
-        draggable: true,
-        resizable: {
-          beforeStart: true,
-          afterEnd: true,
-        },
-      },
-    ];
-  }
+ 
 
-  deleteEvent(eventToDelete: CalendarEvent) {
-    this.events = this.events.filter((event: CalendarEvent<any>) => event !== eventToDelete);
-  }
+ 
 
   setView(view: CalendarView) {
     this.view = view;
@@ -242,6 +227,9 @@ export class UserspaceComponent implements OnInit    {
   errorMessage !: string
   isLoading:boolean=false;
   title!: string
+  place!:any
+
+  
   end!: string
 
 
@@ -257,11 +245,15 @@ export class UserspaceComponent implements OnInit    {
       this.userspaceservice.getEvents().subscribe({
         next: (res) => {
           for (let i = 0; i < res.length; i++) {
+            console.log(res)
             this.events.push({
               title: res[i].nom,
+              place:res[i].ville,
+              date:res[i].date,
+
               start: new Date(res[i].date),
               end: new Date(res[i].dateFin),
-              color: colors['blue'], // or any logic to assign colors
+              color: colors['black'], // or any logic to assign colors
               draggable: true,
               resizable: {
                 beforeStart: true,
@@ -296,6 +288,7 @@ export class UserspaceComponent implements OnInit    {
     const formattedEndDate = endDate.toISOString().slice(0, 19).replace('T', ' ');
     var eventData = {
      nom:this.nom,
+     ville:this.ville,
      date: formattedStartDate,
      dateFin: formattedEndDate,
      successMessage: this.successMessage,
@@ -345,6 +338,7 @@ export interface Event {
   nom: string;
   date: Date;
   dateFin: Date;
+  ville:string
   // Add any other properties you need
 }
 

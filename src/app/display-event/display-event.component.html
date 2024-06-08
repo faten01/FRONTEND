@@ -1,0 +1,130 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/home">EXPO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/reservation">Stand</a></li>
+          <li class="nav-item"><a class="nav-link" href="/events">Event</a></li>
+          <li class="nav-item"><a class="nav-link" href="/userspace">Calendar</a></li>
+             
+              
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+   <body>
+    <div class="main-content">
+    <div class="seatStructure">
+      <div style="text-align: center;">
+          <table id="seatsBlock">
+              <tr>
+                  <td colspan="5"><div class="screen">Events</div>
+                    <tr>
+                    <div class="search-container">
+  
+                    <input type="text"class="bi bi-search"  placeholder="Search events..." [(ngModel)]="searchText" class="search-input" />
+                    <button class="search-button">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </button>
+                </div>
+              </tr>
+  
+  
+                  </td>
+              </tr>
+              <tr *ngIf="filteredEvents().length === 0">
+                <td colspan="5" class="text-center">No Events found</td>
+              </tr>
+              <div *ngFor="let stand of filteredEvents(); let i = index"></div>
+  
+              <!-- Your table rows for seat selection -->
+              <ng-container *ngFor="let event of events; let i = index">
+                  <!-- Start a new row after every 5 stands -->
+                  <ng-container *ngIf="i % 2 === 0">
+                      <tr>
+                  </ng-container>
+                  <td>
+                      <!-- Display stand photo -->
+                      <div class="photo">
+                          <img [src]="event.affiche" alt="Uploaded Image" (click)="openModal(event.affiche)">
+                      </div>
+                      <!-- Button to display stand data -->
+                      <div>
+                          <button type="button" class="btn btn-outline-info" (click)="showStandData(event)">Show Event info</button>
+                      </div>
+                      
+                      <!-- Hidden div containing stand information -->
+                      <div style="display: none;">
+                          <p hidden>id: {{ event.id_event }}</p>
+                          <p>Nom: {{ event.nom }}</p>
+                          <p>Ville: {{ event.ville }}</p>
+                          <p>Date de début: {{ event.date }}</p>
+                          <p>Date Fin: {{ event.dateFin }}</p>
+                      </div>
+                          
+                         
+                        
+                      
+                      
+                      <div class="comments-section">
+                        <button type="button" class="btn btn-outline-info" (click)="toggleComments(event.id_event)">
+                          {{ showComments[event.id_event] ? 'Hide Comments' : 'Show Comments' }}
+                        </button>
+                        <div *ngIf="showComments[event.id_event]" class="comments">
+                          <div *ngFor="let review of getEventRatings(event.id_event)" class="comment">
+                            <img src="assets/images/users/user1.jpg" alt="User Photo" ><!-- Replace with actual user photo path -->
+                            <div class="comment-body">
+                              <h4>
+                                {{ review.user.nom }} {{ review.user.prenom }}
+                                <span class="time">{{ review.created_at | date:'short' }}</span>
+                              </h4>
+                              <p>Rating: {{ review.rating }}</p>
+                              <p>{{ review.review }}</p>
+                              <hr>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                     
+                
+
+                  </td>
+                  
+                  <!-- End a row after every 5 stands -->
+                  <ng-container *ngIf="(i + 1) % 5 === 0 || i === event.length - 1">
+                      
+                  </ng-container>
+              </ng-container>
+              
+         </table>
+      </div>
+  </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close"  (click)="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
+    <div id="standDataModal" class="modal">
+      <div class="modal-content">
+        <span class="close" (click)="closeStandDataModal()">&times;</span>
+        <div id="standDataContainer"></div>
+      </div>
+    </div>
+    
+  
+  </div>
+  </body>
+  <footer>
+  <app-footer></app-footer></footer>
+  
+  
+    

@@ -34,7 +34,7 @@
           <td>
             <div style="display: flex; gap: 10px;">
                 <button routerLink="/component/EventEdit/{{event.id_event}}" class="bi bi-pencil-square custom-button"></button>
-                <button routerLink="" class="bi bi-trash custom-button"></button>
+                <button (click)="deleteEvent(event.id_event)"  class="bi bi-trash custom-button"></button>
             </div>
         </td>
         </tr>

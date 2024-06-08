@@ -54,7 +54,19 @@
         <td>
           <div style="display: flex; gap: 10px;">
               <button routerLink="/component/users/{{user.id}}" class="bi bi-pencil-square custom-button"></button>
-              <button routerLink="" class="bi bi-trash custom-button"></button>
+              <button (click)="deleteUser(user.id)"  class="bi bi-trash custom-button"></button>
+              <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                {{ successMessage }}
+              </div>
+              <!-- Error message -->
+              <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+              </div>
+              <button 
+              (click)="toggleUserStatus(user)" 
+              [ngClass]="{'btn-activated': user.active, 'btn-deactivated': !user.active}">
+              {{ user.active ? 'Activated' : 'Deactivated' }}
+            </button>
           </div>
       </td>
        
@@ -76,6 +88,19 @@
 
 
 <style>
+  .btn-activated {
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+
+}
+
+.btn-deactivated {
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+
+}
 
   /* styles.css */
 body {

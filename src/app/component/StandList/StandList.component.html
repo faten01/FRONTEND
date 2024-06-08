@@ -37,8 +37,8 @@
           <td>
             <div style="display: flex; gap: 10px;">
                 <button routerLink="/component/EditStand/{{stand.id_stand}}" class="bi bi-pencil-square custom-button"></button>
-                <button routerLink="" class="bi bi-trash custom-button"></button>
-            </div>
+                <button (click)="DeleteStand(stand.id_stand)"  class="bi bi-trash custom-button"></button>
+              </div>
         </td>
         </tr>
       </tbody>

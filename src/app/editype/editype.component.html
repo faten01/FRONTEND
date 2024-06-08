@@ -1,0 +1,68 @@
+<body>
+    <section class="vh-100">
+        <div class="container py-5">
+          <div class="row d-flex align-items-center justify-content-center">
+          
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <form (ngSubmit)="updateType(data)" >
+                <h1>Edit Event Type</h1><br>
+                  <div>
+                    <div class="form-outline mb-4">
+                      <input hidden type="text" id="id" [(ngModel)]="data.id_type" name="id" class="form-control form-control-lg" />
+                      <label hidden class="form-label" for="id" >id</label>
+                    </div>
+                
+                <!-- Email input -->
+                
+                  
+              
+                  <div class="form-outline mb-4">
+                    <input type="text" id="type" name="type" [(ngModel)]="data.type"  class="form-control form-control-lg" />
+                    <label class="form-label" for="type" >Type</label>
+                  </div>
+  
+                 
+  
+  
+                  <div class="form-outline mb-4">
+                    <input type="file" id="photo" name="photo" [(ngModel)]="data.photo" class="form-control form-control-lg" />
+                    <label class="form-label" for="photo">Photo</label>
+                  </div>
+  
+                
+  
+              
+  
+  
+  
+                <!--<label class="form-label" for="role" [(ngModel)]="role" >Role:</label><br><br>
+  
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                 
+                  <div class="form-check">
+                    <input class="form-check-input"  type="checkbox" name="admin" id="admin" value="option1"/>
+                    <label class="form-check-label" for="rememberOption1"> Administrateur </label>
+                    
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="exposant" id="exposant" value="option2" />
+                    <label class="form-check-label" for="rememberOption2"> Exposant</label>
+                  </div>
+                 
+                  
+                </div>-->
+                   
+              </div>
+                
+      
+                <button type="submit" class="btn btn-primary btn-lg btn-block mb-3">ajouter</button>
+      
+      
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+      

@@ -7,26 +7,30 @@
   <div class="reservation-container">
     <table class="reservation-table">
       <thead>
-        <tr>
-          <th>User ID</th>
-          <th>Event ID</th>
-          <th>Stand ID</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let reservation of reservations">
-          <td>{{ reservation.user_id }}</td>
-          <td>{{ reservation.event_id }}</td>
-          <td>{{ reservation.stand_id }}</td>
-          <td>{{ reservation.status }}</td>
+       <tr>
+      <th>Reservation ID</th>
+      <th>User Name</th>
+      <th>Event Name</th>
+      <th>Status</th>
+      <th>Reservation Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{ reservation.id }}</td>
+      <td>{{ reservation.user.nom }} {{ reservation.user.prenom }}</td>
+      <td>{{ reservation.event.nom }}</td>
+      <td>{{ reservation.status }}</td>
+      <td>{{ reservation.created_at }}</td>
           <td>
             <button class="bi bi-check-circle custom-button" (click)="updateStatus(reservation.id, 'approved')"></button>
-            <button class="bi bi-trash custom-button" (click)="updateStatus(reservation.id, 'rejected')"></button>
+            <button class="bi bi-x-circle custom-button" (click)="updateStatus(reservation.id, 'rejected')"></button>
           </td>
         </tr>
+        
       </tbody>
+      
     </table>
   </div>
 </body>

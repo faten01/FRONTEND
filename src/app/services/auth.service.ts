@@ -8,9 +8,7 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class AuthService {
 
-  
-  private isLoggedIn = new BehaviorSubject<boolean>(false);
-
+ 
 
   constructor(private httpClient : HttpClient) {
     

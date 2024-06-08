@@ -1,72 +1,168 @@
-/* styles.css */
-body {
-   
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-   
+.navbar {
+    padding: 1rem 2rem;
+    background-color: #343a40;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar {
-    padding: 1rem 2rem;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+    height: 70px;
 }
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 10rem; /* Adjust the size of the logo */
+    margin-left: 40px; /* Adjust margin as needed */
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+   color: #fff;
+}
+
+.navbar a {
+    color: #fffcfc;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    font-family: Stencil Std, fantasy;
+    margin-left: 1.5rem;
+
+
+}
+
+.navbar a:hover {
+    color: #f6066e;
+}
+
+.nav-button {
+    margin-right: 20px; /* Adjust the spacing as needed */
+}
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .signup-btn, .signin-btn {
+    background-color: #ff4081;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;}
+
+
+
+h1{
+font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
 .hero {
+    background: url('/mnt/data/image.png') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
-    padding: 6rem 0;
+    padding: 3rem 0 3rem 0;
     color: #fff;
     position: relative;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin-top: 0.1rem; /* Adjust this value to match the height of the navbar */
 }
 .zero {
-    background-size: cover;
-    background-position: center;
+    background-image: url("https://png.pngtree.com/background/20210714/original/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-picture-image_1250295.jpg");
+    background-size: 1000px;
     padding: 6rem 0;
-    color: #fff;
-    position: center fixed ;
-    background-position: center ;
-    background: fixed;
-    background-size: cover;
-    max-width: 100000%;
+    height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+ 
 
     
 }
 
-.hero .container {
+
+.hero.box{
+
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0 3rem 0;
+    color: #fff;
     position: relative;
-    z-index: 1;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+h1{
+    margin-bottom: 0px;
+
 }
 
 .hero:before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+   
+    bottom: 0px;
+   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    background-position: center;
+    padding: 0rem 0 0rem 0;
+    color: #fff;
+
 }
 
 .overview {
     padding: 4rem 0;
     position: relative;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(236, 236, 236, 0.341);
     margin-top: -4rem;
 }
 
 .overview-text {
-    background-color: rgba(255, 99, 132, 0.2);
+    background-color: rgba(255, 3, 58, 0.2);
     border-radius: 50%;
-    padding: 2rem;
+    padding: 5rem;
     position: relative;
     z-index: 1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .overview h2 {
     color: #e83e8c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
 }
 
 .overview img {
@@ -76,6 +172,10 @@ body {
     background-position: center ;
     background: fixed;
     background-size: cover;
+    width: 600px;
+    height: 300px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .auth-buttons {

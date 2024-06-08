@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Type List</title>
+</head>
+<body>
+  <h2 style="display: flex; justify-content: space-between;">Type Event Information
+    <a routerLink="/addtype" class="btn btn-primary">Add Type Event</a>
+  </h2>
+  <div class="container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Type</th>
+          <th>photo</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let type of this.types ">
+          <td>{{type.id_type}}</td>
+          <td>{{type.type}}</td>
+          <td><div class="photo">
+            <img [src]="type.photo" alt="Uploaded Image" >
+        </div></td>
+          
+
+          
+          <td>
+            <div style="display: flex; gap: 10px;">
+                <button routerLink="/editype/{{type.id_type}}" class="bi bi-pencil-square custom-button"></button>
+                <button (click)="Deletetype(type.id_type)"  class="bi bi-trash custom-button"></button>
+              </div>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
+<style>
+
+  /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-table th, .user-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #f8f8f8;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.user-info .name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-info .username {
+  margin: 0;
+  color: #666;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status-indicator.active {
+  background-color: green;
+}
+
+.status-indicator.inactive {
+  background-color: red;
+}
+
+.contact-btn {
+  padding: 8px 12px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+.custom-button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+    }
+
+    .bi-pencil-square.custom-button {
+        background-color: #007bff;
+    }
+
+    .bi-trash.custom-button {
+        background-color: #dc3545;
+    }
+
+</style>

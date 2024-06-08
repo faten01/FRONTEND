@@ -37,7 +37,8 @@ export class ChatComponent implements OnInit {
       if (this.token) {
         this.user = this.login.customJwtDecode(this.token);
         this.getID();
-        this.loadReservations();
+       // this.loadReservations();
+        this.fetchReservations();
       }
 
     }
@@ -87,6 +88,13 @@ filterReservations() {
     this.filteredReservations = this.reservations.filter(reservations => reservations.user_id === this.userId);
   }
   
+}
+
+fetchReservations(): void {
+  this.reservationService.getReservations().subscribe(reservations => {
+    console.log(reservations);
+    this.reservations = reservations;
+  });
 }
 
 

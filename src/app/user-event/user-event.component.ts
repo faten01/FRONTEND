@@ -75,7 +75,7 @@ showStandData(event: any): void {
   const eventDataHtml = `
     <p hidden><strong>Event ID:</strong> ${eventId}</p>
     <p><strong>Nom:</strong> ${eventNom}</p>
-    <p><strong>ville:</strong> ${eventVille} M²</p>
+    <p><strong>ville:</strong> ${eventVille}</p>
     <p><strong>Date de début :</strong> ${eventDate} M</p>
     <p><strong>Date Fin:</strong> ${eventDateFin} M</p>
     

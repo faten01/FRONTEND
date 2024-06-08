@@ -150,6 +150,17 @@ export const Approutes: Routes = [
 
     loadChildren: () => import('./user-event/user-event.module').then(m => m.UserEventModule)
   },
+  {
+    path: 'displayevent',
+
+    loadChildren: () => import('./display-event/display-event.module').then(m => m.DisplayEventModule)
+  },
+
+  {
+    path: 'displaystand',
+
+    loadChildren: () => import('./display-stand/display-stand.module').then(m => m.DisplayStandModule)
+  },
 
   {
     path: 'eventrate/:id',
@@ -158,12 +169,31 @@ export const Approutes: Routes = [
   },
 
   {
+    path: 'addtype',
+    component: FullComponent,
+
+    loadChildren: () => import('./addtype/addtype.module').then(m => m.AddtypeModule)
+  },
+
+  {
+    path: 'listype',
+    component: FullComponent,
+
+    loadChildren: () => import('./listype/listype.module').then(m => m.ListypeModule)
+  },
+  {
+    path: 'editype/:_id',
+    component: FullComponent,
+
+    loadChildren: () => import('./editype/editype.module').then(m => m.EditypeModule)
+  },
+
+  {
     path: 'home',
 
     children: [
       {
         path: '',
-        component: LayoutComponent,
 
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },

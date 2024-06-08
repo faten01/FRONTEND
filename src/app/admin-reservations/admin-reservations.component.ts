@@ -13,7 +13,8 @@ export class AdminReservationsComponent implements OnInit {
   constructor(private reservationService: ReservationsService) {}
 
   ngOnInit(): void {
-    this.loadReservations();
+    //this.loadReservations();
+    this.fetchReservations();
   }
 
   loadReservations() {
@@ -29,6 +30,13 @@ export class AdminReservationsComponent implements OnInit {
         this.loadReservations(); // Reload to see updated status
       },
       error: (error) => console.error('Error updating reservation:', error)
+    });
+  }
+
+  fetchReservations(): void {
+    this.reservationService.getReservations().subscribe(reservations => {
+      console.log(reservations);
+      this.reservations = reservations;
     });
   }
 

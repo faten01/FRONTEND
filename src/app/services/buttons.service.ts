@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface UserResponse {
   id:number
@@ -11,6 +12,7 @@ export interface UserResponse {
   role:string
   successMessage: string 
   errorMessage: string 
+  active: boolean
 }
 
 @Injectable({
@@ -49,6 +51,19 @@ export class ButtonsService {
   return(){
     return this.httpClient.get('http://127.0.0.1:8000/api/nom');
 
+  }
+
+
+  activateUser(userId: number): Observable<any> {
+    return this.httpClient.put(`http://127.0.0.1:8000/api/users/${userId}/activate`, {});
+  }
+
+  deactivateUser(userId: number): Observable<any> {
+    return this.httpClient.put(`http://127.0.0.1:8000/api/users/${userId}/deactivate`, {});
+  }
+
+  deleteUser(userId: number): Observable<any> {
+    return this.httpClient.delete(`http://127.0.0.1:8000/api/users/${userId}`, {});
   }
   
 }

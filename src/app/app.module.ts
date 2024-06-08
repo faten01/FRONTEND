@@ -46,6 +46,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AboutModule } from './component/Event/About.module';
 import { UserEventComponent } from './user-event/user-event.component';
 import { EventRateComponent } from './event-rate/event-rate.component';
+import { DisplayEventComponent } from './display-event/display-event.component';
+import { DisplayStandComponent } from './display-stand/display-stand.component';
+import { AddtypeComponent } from './addtype/addtype.component';
+import { ListypeComponent } from './listype/listype.component';
+import { EditypeComponent } from './editype/editype.component';
 
 
 
@@ -74,6 +79,11 @@ export const appConfig: ApplicationConfig = {
     AdminReservationsComponent,
     UserEventComponent,
     EventRateComponent,
+    DisplayEventComponent,
+    DisplayStandComponent,
+    AddtypeComponent,
+    ListypeComponent,
+    EditypeComponent,
     
   ],
   imports: [

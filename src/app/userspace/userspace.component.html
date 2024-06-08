@@ -22,7 +22,7 @@
             ><i class="fas fa-users fa-fw me-3"></i><span>Exhibitors</span></a
           >
           <a href="/chat" class="list-group-item list-group-item-action py-2 ripple"
-            ><i class="bi bi-chat-fill me-3"></i><span>Chat</span></a
+            ><i class="bi bi-chat-fill me-3"></i><span>Response Reserv</span></a
           >
 
 
@@ -59,29 +59,15 @@
                 <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Map</a>
+                <a class="nav-link" href="/reservation" span class="sr-only">>Stand</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/reservation" >Stand</a>
+          </li>
 
 
 
-            <li class="nav-item d-none d-md-block" ngbDropdown placement="bottom-end">
-              <a
-                ngbDropdownToggle
-                class="nav-link waves-effect waves-dark"
-                href="javascript:void(0)"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <span>Discover</span>
-              </a>
-              <div ngbDropdownMenu>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
+            
         </ul>
 
 
@@ -99,23 +85,9 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              
             </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a class="dropdown-item" href="#">Some news</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Another news</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
+            
           </li>
 
           <li class="nav-item">
@@ -200,6 +172,7 @@
   </div>
   <div class="col-md-4">
     <div class="btn-group">
+    
       <div
         class="btn btn-primary"
         (click)="setView(CalendarView.Month)"

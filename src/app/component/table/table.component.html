@@ -1,146 +1,175 @@
-<div class="row">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Project Listing</h4>
-        <h5 class="card-subtitle text-muted">Overview of the projects</h5>
-        <div class="table-responsive">
-          <table class="table align-middle text-nowrap">
-              <thead>
-                  <tr>
-                      <th class="text-dark font-medium fs-4">Team Lead</th>
-                      <th class="text-dark font-medium fs-4">Project</th>
-                      <th class="text-dark font-medium fs-4">Status</th>
-                      <th class="text-dark font-medium fs-4">Weeks</th>
-                      <th class="text-dark font-medium fs-4">Budget</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor='let ts of topSelling'>
-                      <td>
-                          <div class="d-flex align-items-center">
-                              <img [src]=ts.image alt="user" width="45" class="rounded-circle">
-                              <div class="ms-3">
-                                  <h5 class="mb-0 font-medium">{{ts.uname}}</h5>
-                                  <span class="text-muted">{{ts.gmail}}</span>
-                              </div>
-                          </div>
-                      </td>
-                      <td class="fs-4">{{ts.productName}}</td>
-                      <td>
-                          <span class="p-2 bg-{{ts.status}} rounded-circle d-inline-block ms-3"></span>
-                      </td>
-                      
-                      <td>
-                          <h5 class="mb-0 fw-normal">{{ts.weeks}}</h5>
-                      </td>
-                      <td>
-                          <h5 class="mb-0 fw-normal">{{ts.budget}}</h5>
-                      </td>
-                  </tr>              
-              </tbody>
-          </table>
-      </div>
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Table with Border</h4>
-            <div class="table-responsive">
-                <table class="table table-bordered align-middle text-nowrap">
-                    <thead>
-                        <tr>
-                            <th class="text-dark font-medium fs-4">#</th>
-                            <th class="text-dark font-medium fs-4">First Name</th>
-                            <th class="text-dark font-medium fs-4">Last Name</th>
-                            <th class="text-dark font-medium fs-4">Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor='let tr of trow; index as i'>
-                            <td>
-                                {{ i + 1 }}
-                            </td>
-                            <td>
-                                {{tr.fname}}
-                            </td>
-                            <td>
-                                {{tr.lname}}
-                            </td>
-                            <td>
-                                {{tr.uname}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expo Bookings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <div class="sidebar-header">
+                <h3>EXPO</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">Bookings</a>
+                </li>
+                <li>
+                    <a href="#">Event Types</a>
+                </li>
+                <li>
+                    <a href="#">Availability</a>
+                </li>
+                <li>
+                    <a href="#">Exhibitors</a>
+                </li>
+                <li>
+                    <a href="#">Notifications</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 content">
+            <h2>BOOKINGS</h2>
+            <p>See your scheduled events from your calendar events links</p>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Upcoming</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Recurring</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Past</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cancelled</a>
+                </li>
+            </ul>
+            <div class="events">
+                <div class="event">
+                    <div class="date">
+                        <span class="day">28</span>
+                        <span class="month">SAT</span>
+                    </div>
+                    <div class="details">
+                        <p><strong>09:00 - 10:30</strong></p>
+                        <p>Sousse</p>
+                    </div>
+                    <div class="type">
+                        <p>TECH EVENT</p>
+                    </div>
+                </div>
+                <!-- Repeat event divs as needed -->
             </div>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Table Hover</h4>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle text-nowrap table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="text-dark font-medium fs-4">#</th>
-                            <th class="text-dark font-medium fs-4">First Name</th>
-                            <th class="text-dark font-medium fs-4">Last Name</th>
-                            <th class="text-dark font-medium fs-4">Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor='let tr of trow; index as i'>
-                            <td>
-                                {{ i + 1 }}
-                            </td>
-                            <td>
-                                {{tr.fname}}
-                            </td>
-                            <td>
-                                {{tr.lname}}
-                            </td>
-                            <td>
-                                {{tr.uname}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Table Striped</h4>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle text-nowrap table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th class="text-dark font-medium fs-4">#</th>
-                            <th class="text-dark font-medium fs-4">First Name</th>
-                            <th class="text-dark font-medium fs-4">Last Name</th>
-                            <th class="text-dark font-medium fs-4">Username</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor='let tr of trow; index as i'>
-                            <td>
-                                {{ i + 1 }}
-                            </td>
-                            <td>
-                                {{tr.fname}}
-                            </td>
-                            <td>
-                                {{tr.lname}}
-                            </td>
-                            <td>
-                                {{tr.uname}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-  </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.sidebar {
+    background: #f8f9fa;
+    padding: 15px;
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #333;
+    display: block;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background: #ddd;
+    color: #333;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.nav-tabs {
+    margin-top: 20px;
+}
+
+.events {
+    margin-top: 20px;
+}
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.date {
+    background: #343a40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.date .day {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.date .month {
+    font-size: 12px;
+}
+
+.details, .type {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.type {
+    text-align: right;
+}
+
+</style>
